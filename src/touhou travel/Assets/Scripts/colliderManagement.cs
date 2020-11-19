@@ -5,18 +5,27 @@ using UnityEngine;
 public class colliderManagement : MonoBehaviour
 {
     // Start is called before the first frame update
+    private GameObject canva;
+    private Inventory inventory;
+  
     void Start()
     {
-        
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        
+      canva = GameObject.FindGameObjectWithTag("Interact");
+      canva.SetActive(false);
+     
     }
 
-    // Update is called once per frame
-    private void OnCollisionExit(Collision collision)
-    {
-        
+
+    private void OnTriggerEnter2D(Collider2D other) {
+   
+      canva.SetActive(true);
+      
+      
     }
+    
+    private void OnTriggerExit2D(Collider2D other) {
+     canva.SetActive(false);
+    }
+   
+    
 }
