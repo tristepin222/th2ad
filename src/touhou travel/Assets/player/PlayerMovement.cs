@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;
+    private const float  MOVESPEED = 5f;
+    public float speed = 1f;
     public Rigidbody2D rb;
     private KeyCode shift = KeyCode.LeftShift;
     Vector2 movement; 
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -23,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
         // movement 
         if (Input.GetKey(shift))
         {
-            moveSpeed = 10f;
+            speed = 2f;
         }
         else
         {
-            moveSpeed = 5f;
+            speed = 1f;
         }
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * MOVESPEED * speed * Time.fixedDeltaTime);
        
     }
 }

@@ -2,28 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Inventory : MonoBehaviour
+using System;
+public class Inventory
 {
 
+public event EventHandler OnItemListChanged;
+    private List<Item> itemList;
     private GameObject inventoryUI;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        inventoryUI = GameObject.FindGameObjectWithTag("Inventory");
+   
+    public Inventory(){
+        itemList = new List<Item>();
+
+    
+        
+     }
+
+    
+    
+     public void AddInventory(Item itemName){
+        itemList.Add(itemName);
+        OnItemListChanged.Invoke(this, EventArgs.Empty);
+        Debug.Log(OnItemListChanged);
+       
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public List<Item> getItemList(){
+       return itemList;
     }
-     public void AddInventory(string itemName = "missigno!"){
-        GameObject slot = new GameObject();
-        slot.name = "slot";
-           slot.transform.SetParent(inventoryUI.transform);
-            Text item = slot.AddComponent<Text>();
-            item.text = itemName;
-           Debug.Log(item);
+    public override string ToString()
+    {
+        return base.ToString() + OnItemListChanged.ToString();
     }
 }
+
