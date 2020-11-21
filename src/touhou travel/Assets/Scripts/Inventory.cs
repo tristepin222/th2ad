@@ -10,7 +10,10 @@ public event EventHandler OnItemListChanged;
     private List<Item> itemList;
     private GameObject inventoryUI;
     
-   
+    private const int MAXSLOTS = 5;
+    private int capacity = 0;
+    private bool fullStack = false;
+  
     public Inventory(){
         itemList = new List<Item>();
 
@@ -21,9 +24,53 @@ public event EventHandler OnItemListChanged;
     
     
      public void AddInventory(Item itemName){
-        itemList.Add(itemName);
+         capacity = itemList.Count-1;
+         if(itemList.Count > MAXSLOTS ){
+             
+            throw new InventoryFullException();
+         }
+         else
+         {
+             if(itemList.Count == 0){
+                  itemList.Add(itemName);  
+                 
+                  capacity = 0;
+             }else{
+             for(int i = capacity; i < itemList.Count;i++){
+                 
+                
+                 if(itemList[i].GetString() == itemName.GetString()){
+                     
+                    if(itemList[i].amount < itemName.getMaxAmount() )
+                    {
+                      
+                       itemList[i].amount += itemName.amount;
+                       
+                    }else{
+                        if(itemList.Count >= MAXSLOTS ){
+             
+                            throw new InventoryFullException();
+                        }
+                        
+                          itemList.Add(itemName);
+                          break;
+                          
+                    }
+                    
+                 }else{
+                    
+                     itemList.Add(itemName);
+                      break;
+                     
+                 }
+             }
+             
+            
+             }
+             
+             
         OnItemListChanged.Invoke(this, EventArgs.Empty);
-        Debug.Log(OnItemListChanged);
+         }
        
     }
 

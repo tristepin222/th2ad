@@ -13,6 +13,7 @@ public class UI_Inventory : MonoBehaviour
     private  void Awake() {
     itemSlotContainer = transform.Find("itemSlotContainer");
     itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+    itemSlotTemplate.gameObject.SetActive(false);
     
     }
     public void SetInventory(Inventory inventory){
@@ -31,8 +32,7 @@ public class UI_Inventory : MonoBehaviour
         int x = 0;
         int y = 0;
         float itemSlotCellSize = 75f;
-        itemSlotContainer = transform.Find("itemSlotContainer");
-        itemSlotTemplate = itemSlotContainer.Find("itemSlotTemplate");
+        
         foreach(Transform child in itemSlotContainer){
         if (child == itemSlotTemplate) continue;
         Destroy(child.gameObject);
@@ -43,7 +43,9 @@ public class UI_Inventory : MonoBehaviour
            itemSlotRectTransform.gameObject.SetActive(true);
            itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, y * itemSlotCellSize);
            Text textcontent = itemSlotRectTransform.Find("Text").GetComponent<Text>();
+           Text amountContent = itemSlotRectTransform.Find("Amount").GetComponent<Text>();
            textcontent.text = item.GetString();
+           amountContent.text = item.GetAmount().ToString();
            x++;
         }
     }

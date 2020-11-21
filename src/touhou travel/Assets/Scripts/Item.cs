@@ -16,7 +16,7 @@ public class Item
     // Update is called once per frame
     public ItemType itemType;
     public int amount;
-
+    public  int maxAmount;
     public string GetString(){
         switch(itemType){
             default:
@@ -26,5 +26,12 @@ public class Item
             case ItemType.Wood : return "Wood";
             case ItemType.Rock : return "Rock";
         }
+        
+    }
+    public int GetAmount(){
+        return amount;
+    }
+    public int getMaxAmount(){
+        return maxAmount;
     }
 }
