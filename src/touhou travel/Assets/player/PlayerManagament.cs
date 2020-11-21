@@ -37,8 +37,9 @@ private Inventory inventory;
         if(Input.GetKeyDown(e) && Interact.enabled == true){
         try{
             textException.gameObject.SetActive(false);
-            inventory.AddInventory(new Item { itemType = Item.ItemType.Wood, amount = 1, maxAmount = 15});
-            inventory.AddInventory(new Item { itemType = Item.ItemType.Spell, amount = 1, maxAmount = 2});
+            inventory.AddInventory(new Item { itemType = Item.ItemType.Wood, amount = 1, maxAmount = 15, maxedOut = false});
+            inventory.AddInventory(new Item { itemType = Item.ItemType.Spell, amount = 1, maxAmount = 10, maxedOut = false});
+            inventory.AddInventory(new Item { itemType = Item.ItemType.Coin, amount = 2, maxAmount = 20, maxedOut = false});
         }catch(FullObjectException){
          textException.gameObject.SetActive(true);
         

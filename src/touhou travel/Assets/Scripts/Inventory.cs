@@ -10,10 +10,11 @@ public event EventHandler OnItemListChanged;
     private List<Item> itemList;
     private GameObject inventoryUI;
     
-    private const int MAXSLOTS = 5;
+    private const int MAXSLOTS = 6;
     private int capacity = 0;
-    private bool fullStack = false;
+    private bool found = false;
   
+
     public Inventory(){
         itemList = new List<Item>();
 
@@ -29,48 +30,74 @@ public event EventHandler OnItemListChanged;
              
             throw new InventoryFullException();
          }
-         else
-         {
+         
              if(itemList.Count == 0){
+                 
                   itemList.Add(itemName);  
                  
-                  capacity = 0;
+                  
              }else{
-             for(int i = capacity; i < itemList.Count;i++){
+                 
+             for(int i = 0; i < itemList.Count;i++){
                  
                 
+              
+              
                  if(itemList[i].GetString() == itemName.GetString()){
+
                      
-                    if(itemList[i].amount < itemName.getMaxAmount() )
+                     found = true;
+                    
+                    if((itemList[i].amount < itemName.getMaxAmount()))
                     {
-                      
+                     
+                     
+                          if(!itemList[i].maxedOut){
                        itemList[i].amount += itemName.amount;
+                          }
+                 
+                 
                        
-                    }else{
+                    }else if(!itemList[i].maxedOut){
+                        
                         if(itemList.Count >= MAXSLOTS ){
              
                             throw new InventoryFullException();
                         }
                         
+                      
+                       itemList[i].maxedOut = true;
                           itemList.Add(itemName);
-                          break;
+                            
+                        break;
                           
                     }
                     
-                 }else{
                     
-                     itemList.Add(itemName);
-                      break;
-                     
                  }
+                 
              }
+             if(!found){
+                
+                 found = false;
+                if(itemList.Count >= MAXSLOTS ){
+             
+                            throw new InventoryFullException();
+                        }
+                        
+                       
+                          itemList.Add(itemName);
+                          
+                      
+             }
+                         
              
             
              }
              
              
         OnItemListChanged.Invoke(this, EventArgs.Empty);
-         }
+         
        
     }
 

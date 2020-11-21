@@ -15,8 +15,10 @@ public class Item
 
     // Update is called once per frame
     public ItemType itemType;
-    public int amount;
+    public int amount {get; set;}
     public  int maxAmount;
+    public bool maxedOut;
+   
     public string GetString(){
         switch(itemType){
             default:
@@ -28,6 +30,7 @@ public class Item
         }
         
     }
+    
     public int GetAmount(){
         return amount;
     }
