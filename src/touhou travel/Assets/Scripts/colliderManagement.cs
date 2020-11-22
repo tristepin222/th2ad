@@ -7,12 +7,17 @@ public class colliderManagement : MonoBehaviour
     // Start is called before the first frame update
     private GameObject canva;
     private Inventory inventory;
+
   
+
+    private void Awake() {
+      
+    }
     void Start()
     {
       canva = GameObject.FindGameObjectWithTag("Interact");
       canva.SetActive(false);
-     
+    
     }
 
 

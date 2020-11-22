@@ -6,8 +6,12 @@ public class PlayerManagament : MonoBehaviour
 {
 
 [SerializeField] private UI_Inventory uiInventory; 
+
+[SerializeField] private UI_Life uiLife; 
 private Inventory inventory;
+private LifeManagament life;
  private GameObject canva;
+ public Item item{get; set;}
       private KeyCode e = KeyCode.E;
  
  [SerializeField] private Transform textException;
@@ -17,9 +21,11 @@ private Inventory inventory;
     private Canvas Interact;
    private  void Awake() {
         textException.gameObject.SetActive(false);
-    inventory = new Inventory();
+        inventory = new Inventory();
+        life = new LifeManagament(3);
     
     uiInventory.SetInventory(inventory);
+    uiLife.setLifeUI(life);
     }
     void Start()
     {
@@ -29,6 +35,7 @@ private Inventory inventory;
     }
     void Update()
     {
+        
         if (Input.GetKeyDown(esc))
         {
             
@@ -37,9 +44,9 @@ private Inventory inventory;
         if(Input.GetKeyDown(e) && Interact.enabled == true){
         try{
             textException.gameObject.SetActive(false);
-            inventory.AddInventory(new Item { itemType = Item.ItemType.Wood, amount = 1, maxAmount = 15, maxedOut = false});
-            inventory.AddInventory(new Item { itemType = Item.ItemType.Spell, amount = 1, maxAmount = 10, maxedOut = false});
-            inventory.AddInventory(new Item { itemType = Item.ItemType.Coin, amount = 2, maxAmount = 20, maxedOut = false});
+          
+           inventory.AddInventory(new Item{itemType = Item.ItemType.Wood, amount = 1, maxAmount = 16, maxedOut = false});
+           life.addLife(1);
         }catch(FullObjectException){
          textException.gameObject.SetActive(true);
         
@@ -48,6 +55,8 @@ private Inventory inventory;
     }
 
     }
+
+    
 
 }
 
