@@ -10,11 +10,16 @@ public class UI_Life : MonoBehaviour
     private  void Awake() {
     lifeContainer = transform.Find("LifeContainer");
     lifeText = lifeContainer.Find("LifeText").GetComponent<Text>();
+        
     }
 
     public void setLifeUI(LifeManagament life){
 
+        lifeContainer = transform.Find("LifeContainer");
+        lifeText = lifeContainer.Find("LifeText").GetComponent<Text>();
+
         this.life = life;
+        
         lifeText.text = life.ToString();
         
         this.life.LifeChanged += LifeManagament_On_LifeChanged;

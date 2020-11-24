@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-public class Inventory
+public class Inventory 
 {
 
 public event EventHandler OnItemListChanged;
@@ -94,11 +94,12 @@ public event EventHandler OnItemListChanged;
              
             
              }
-             
-             
-        OnItemListChanged.Invoke(this, EventArgs.Empty);
-         
-       
+
+        if (OnItemListChanged != null)
+        {
+            OnItemListChanged.Invoke(this, EventArgs.Empty);
+
+        }
     }
 
     public List<Item> getItemList(){
@@ -106,7 +107,14 @@ public event EventHandler OnItemListChanged;
     }
     public override string ToString()
     {
-        return base.ToString() + OnItemListChanged.ToString();
+        return base.ToString();
+    }
+    public void RemoveInventory(Item itemName)
+    {
+        if (itemList != null)
+        {
+            itemList.Remove(itemName);
+        }
     }
 }
 
