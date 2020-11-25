@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
             speed = 1f;
         }
         rb.MovePosition(rb.position + movement * MOVESPEED * speed * Time.fixedDeltaTime);
+
        
     }
 }

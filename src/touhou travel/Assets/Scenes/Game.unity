@@ -936,10 +936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 427f106dafd7a384dba574b68870e6a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiInventory: {fileID: 0}
-  uiLife: {fileID: 1410331026}
   player: {fileID: 1244419230}
   textException: {fileID: 544395126}
+  itemScriptableObject: {fileID: 11400000, guid: 251ed04791ad98442ac3daa536d51454, type: 2}
+  amount: 2
+  maxAmount: 16
 --- !u!1 &722814086
 GameObject:
   m_ObjectHideFlags: 0

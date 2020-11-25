@@ -11,6 +11,9 @@ public class colliderManagement : MonoBehaviour
 
     [SerializeField] PlayerManagament player;
     [SerializeField] private Transform textException;
+    [SerializeField] ItemScriptableObject itemScriptableObject;
+    [SerializeField] int amount;
+    [SerializeField] int maxAmount;
     private Inventory selfIventory;
     private KeyCode e = KeyCode.E;
     private Canvas Interact;
@@ -24,7 +27,7 @@ public class colliderManagement : MonoBehaviour
 
     void Start()
     {
-        item = new Item { itemType = Item.ItemType.HealthPotion, amount = 12, maxAmount = 12, maxedOut = false };
+        item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.maxAmount, maxAmount = this.maxAmount, maxedOut = false };
         textException.gameObject.SetActive(false);
         Interact = Canvas.FindObjectOfType<Canvas>();
         selfIventory = new Inventory();
@@ -37,7 +40,7 @@ public class colliderManagement : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(canva);
+        
       canva.SetActive(true);
       
       
@@ -48,21 +51,39 @@ public class colliderManagement : MonoBehaviour
     }
     private void Update()
     {
+    
         if (Input.GetKeyDown(e) && Interact.enabled == true)
         {
             try
             {
-                textException.gameObject.SetActive(false);
 
-                player.GetInventory().AddInventory(item);
-                selfIventory.RemoveInventory(item);
-                
+
+
+                if (selfIventory.empty)
+                {
+                    throw new InventoryEmpty();
+                }
+                else
+                {
+                    item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.amount, maxAmount = this.maxAmount, maxedOut = false };
+                    textException.gameObject.SetActive(false);
+                    selfIventory.RemoveInventory(item);
+                    player.GetInventory().AddInventory(item);
+
+                    
+
+                }
             }
-            catch (FullObjectException)
+            catch (InventoryFullException)
             {
                 textException.gameObject.SetActive(true);
 
             }
+            catch (InventoryEmpty)
+            {
+
+            }
+
 
         }
     }

@@ -8,10 +8,10 @@ public class Inventory
 
 public event EventHandler OnItemListChanged;
     private List<Item> itemList;
-    private GameObject inventoryUI;
-    
+ 
+    public bool empty;
     private const int MAXSLOTS = 6;
-    private int capacity = 0;
+
     private bool found = false;
   
 
@@ -25,7 +25,7 @@ public event EventHandler OnItemListChanged;
     
     
      public void AddInventory(Item itemName){
-         capacity = itemList.Count-1;
+        
          if(itemList.Count > MAXSLOTS ){
              
             throw new InventoryFullException();
@@ -53,7 +53,8 @@ public event EventHandler OnItemListChanged;
                      
                      
                           if(!itemList[i].maxedOut){
-                       itemList[i].amount += itemName.amount;
+                            
+                       itemList[i].amount += itemName.GetAmount();
                           }
                  
                  
@@ -111,10 +112,31 @@ public event EventHandler OnItemListChanged;
     }
     public void RemoveInventory(Item itemName)
     {
-        if (itemList != null)
+        Item itemInInventory = null;
+        if (itemList.Count != 0)
         {
-            itemList.Remove(itemName);
+            empty = false;
+           foreach(Item item in itemList)
+            {
+                
+                if(item.itemScriptableObject == itemName.itemScriptableObject)
+                {
+                    item.amount -= itemName.GetAmount();
+                    itemInInventory = item;
+                }
+            }
+           if(itemInInventory.amount == 0)
+            {
+                itemList.Remove(itemInInventory);
+            }
+           
         }
+        else
+        {
+            empty = true;
+            throw new InventoryEmpty();
+        }
+       
     }
 }
 

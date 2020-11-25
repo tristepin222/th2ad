@@ -11,3 +11,4 @@ public class InventoryFullException : FullObjectException
     public InventoryFullException() { }
     
 }
+public class InventoryEmpty : FullObjectException { }
