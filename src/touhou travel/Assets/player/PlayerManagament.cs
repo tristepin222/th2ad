@@ -8,7 +8,11 @@ public class PlayerManagament : MonoBehaviour
 [SerializeField] private UI_Inventory uiInventory; 
 
 [SerializeField] private UI_Life uiLife; 
-private Inventory inventory;
+private static Inventory inventory;
+
+[SerializeField] string typeName;
+ [SerializeField] private  Collider2D collider2D;
+ private Type type;
 private LifeManagament life;
     private GameObject canva;
 
@@ -20,7 +24,7 @@ private LifeManagament life;
 
     
    private  void Awake() {
-      
+      type = new Type(typeName);
         inventory = new Inventory();
         life = new LifeManagament(3);
     
@@ -32,6 +36,10 @@ private LifeManagament life;
     public Inventory GetInventory()
     {
         return inventory;
+    }
+    public Collider2D GetCollider2D()
+    {
+        return collider2D;
     }
     void Start()
     {

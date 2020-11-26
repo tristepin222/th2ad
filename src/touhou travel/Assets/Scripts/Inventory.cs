@@ -99,7 +99,7 @@ public event EventHandler OnItemListChanged;
         if (OnItemListChanged != null)
         {
             OnItemListChanged.Invoke(this, EventArgs.Empty);
-
+            
         }
     }
 
@@ -136,7 +136,12 @@ public event EventHandler OnItemListChanged;
             empty = true;
             throw new InventoryEmpty();
         }
-       
+        if (OnItemListChanged != null)
+        {
+            OnItemListChanged.Invoke(this, EventArgs.Empty);
+
+        }
+
     }
 }
 

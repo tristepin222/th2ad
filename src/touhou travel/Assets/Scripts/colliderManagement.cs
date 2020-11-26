@@ -5,24 +5,29 @@ using UnityEngine;
 public class colliderManagement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private GameObject canva;
+   [SerializeField] private GameObject canva;
 
 
 
     [SerializeField] PlayerManagament player;
+    [SerializeField] private bool invert;
     [SerializeField] private Transform textException;
-    [SerializeField] ItemScriptableObject itemScriptableObject;
-    [SerializeField] int amount;
-    [SerializeField] int maxAmount;
+    [SerializeField] private ItemScriptableObject itemScriptableObject;
+    [SerializeField] private int amount;
+    [SerializeField] private int maxAmount;
+    [SerializeField] private Collider2D collider2D;
     private Inventory selfIventory;
     private KeyCode e = KeyCode.E;
     private Canvas Interact;
     private Item item;
+  
+    private Collision2D collide;
 
     private void Awake()
     {
-        canva = GameObject.FindGameObjectWithTag("Interact");
+        
         canva.SetActive(false);
+        
     }
 
     void Start()
@@ -42,21 +47,25 @@ public class colliderManagement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         
       canva.SetActive(true);
-      
-      
+        
+
+
     }
     
     private void OnTriggerExit2D(Collider2D other) {
      canva.SetActive(false);
+        
     }
+
+   
+
     private void Update()
     {
-    
+       
         if (Input.GetKeyDown(e) && Interact.enabled == true)
         {
             try
             {
-
 
 
                 if (selfIventory.empty)
@@ -65,14 +74,28 @@ public class colliderManagement : MonoBehaviour
                 }
                 else
                 {
+                   
                     item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.amount, maxAmount = this.maxAmount, maxedOut = false };
                     textException.gameObject.SetActive(false);
+                    if(player.GetCollider2D().IsTouching(collider2D)){
+                 if(this.invert){
+                        
+                    player.GetInventory().RemoveInventory(item);
+                    selfIventory.AddInventory(item);
+                    this.invert = true;
+                    }else{
+                    
                     selfIventory.RemoveInventory(item);
                     player.GetInventory().AddInventory(item);
+                    this.invert = false;
 
-                    
+                    }
+                        collide = null;
+                    }
 
                 }
+                
+
             }
             catch (InventoryFullException)
             {
