@@ -15,13 +15,13 @@ public class colliderManagement : MonoBehaviour
     [SerializeField] private ItemScriptableObject itemScriptableObject;
     [SerializeField] private int amount;
     [SerializeField] private int maxAmount;
-    [SerializeField] private Collider2D collider2D;
+    [SerializeField] private Collider2D collider2DC;
     private Inventory selfIventory;
     private KeyCode e = KeyCode.E;
     private Canvas Interact;
     private Item item;
   
-    private Collision2D collide;
+
 
     private void Awake()
     {
@@ -32,12 +32,20 @@ public class colliderManagement : MonoBehaviour
 
     void Start()
     {
-        item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.maxAmount, maxAmount = this.maxAmount, maxedOut = false };
+        
         textException.gameObject.SetActive(false);
         Interact = Canvas.FindObjectOfType<Canvas>();
         selfIventory = new Inventory();
-        
-        selfIventory.AddInventory(item);
+
+        if (!invert)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.maxAmount, maxAmount = this.maxAmount, maxedOut = false };
+                selfIventory.AddInventory(item);
+            }
+            
+        }
     
         
 
@@ -77,7 +85,7 @@ public class colliderManagement : MonoBehaviour
                    
                     item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.amount, maxAmount = this.maxAmount, maxedOut = false };
                     textException.gameObject.SetActive(false);
-                    if(player.GetCollider2D().IsTouching(collider2D)){
+                    if(player.GetCollider2D().IsTouching(collider2DC)){
                  if(this.invert){
                         
                     player.GetInventory().RemoveInventory(item);
@@ -90,7 +98,7 @@ public class colliderManagement : MonoBehaviour
                     this.invert = false;
 
                     }
-                        collide = null;
+                        
                     }
 
                 }

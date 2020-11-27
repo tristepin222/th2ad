@@ -11,7 +11,7 @@ public class PlayerManagament : MonoBehaviour
 private static Inventory inventory;
 
 [SerializeField] string typeName;
- [SerializeField] private  Collider2D collider2D;
+ [SerializeField] private  Collider2D collider2DC;
  private Type type;
 private LifeManagament life;
     private GameObject canva;
@@ -39,7 +39,7 @@ private LifeManagament life;
     }
     public Collider2D GetCollider2D()
     {
-        return collider2D;
+        return collider2DC;
     }
     void Start()
     {

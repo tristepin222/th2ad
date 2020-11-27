@@ -943,7 +943,7 @@ MonoBehaviour:
   itemScriptableObject: {fileID: 11400000, guid: 251ed04791ad98442ac3daa536d51454, type: 2}
   amount: 2
   maxAmount: 16
-  collider2D: {fileID: 674414363}
+  collider2DC: {fileID: 674414363}
 --- !u!1 &722814086
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,7 +3882,7 @@ MonoBehaviour:
   uiInventory: {fileID: 183633596}
   uiLife: {fileID: 1410331026}
   typeName: Vampire
-  collider2D: {fileID: 1244419228}
+  collider2DC: {fileID: 1244419228}
 --- !u!1 &1349047633
 GameObject:
   m_ObjectHideFlags: 0
@@ -4393,7 +4393,7 @@ MonoBehaviour:
   itemScriptableObject: {fileID: 11400000, guid: 251ed04791ad98442ac3daa536d51454, type: 2}
   amount: 2
   maxAmount: 16
-  collider2D: {fileID: 1750723955}
+  collider2DC: {fileID: 1750723955}
 --- !u!61 &1750723955
 BoxCollider2D:
   m_ObjectHideFlags: 0
