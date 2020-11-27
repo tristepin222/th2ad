@@ -8,6 +8,8 @@ TagManager:
   - cm
   - Interact
   - Inventory
+  - Enemi
+  - ProjectilePlayer
   layers:
   - Default
   - TransparentFX

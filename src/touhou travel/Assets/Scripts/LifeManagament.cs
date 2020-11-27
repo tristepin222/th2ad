@@ -12,12 +12,19 @@ lifeAmount = amount;
     }
     public void addLife(int amount){
     lifeAmount += amount;
-       LifeChanged.Invoke(this, EventArgs.Empty);
+        if (LifeChanged != null)
+        {
+
+            LifeChanged.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public void reduceLife(int amount){
     lifeAmount -= amount;
-       LifeChanged.Invoke(this, EventArgs.Empty);
+        if (LifeChanged != null)
+        {
+            LifeChanged.Invoke(this, EventArgs.Empty);
+        }
     }
 
     public override string ToString()
