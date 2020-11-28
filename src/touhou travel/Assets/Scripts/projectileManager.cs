@@ -18,7 +18,6 @@ public class projectileManager : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         sr = this.GetComponent<SpriteRenderer>();
         sr.sprite = projectileScriptableObject.sprite;
-        rb.velocity = new Vector2(speed, speed); 
 
     }
 
@@ -37,7 +36,12 @@ public class projectileManager : MonoBehaviour
     private void FixedUpdate()
     {
         time++;
-        Debug.Log(time);
+
     }
-    
+
+    private void OnBecameInvisible()
+    {
+        Destroy(this.gameObject);
+    }
+
 }
