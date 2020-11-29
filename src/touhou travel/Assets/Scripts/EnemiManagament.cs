@@ -6,15 +6,23 @@ using System;
 
 public class EnemiManagament : MonoBehaviour
 {
-    [SerializeField] PlayerManagament player;
+    [SerializeField] GameObject projectile;
+    [SerializeField] public float bulletSpeed;
+    public PlayerManagament player;
     private LifeManagament life;
     public EventHandler hit;
     UnityEngine.Random rand;
    public Item item;
+    private int cooldown;
+    public int cooldownMax;
+    private Vector3 target;
     void Awake()
     {
         life = new LifeManagament(2);
         rand = new UnityEngine.Random();
+        GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
+       player = GPlayer.GetComponent<PlayerManagament>();
+        life.isPLayer = false;
     }
 
     public void OnHit()
@@ -31,10 +39,25 @@ public class EnemiManagament : MonoBehaviour
     }
     private void Update()
     {
-        if(life.lifeAmount <= 0)
+        target = player.transform.position;
+        Vector3 difference = target - this.transform.position;
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        if (life.lifeAmount <= 0)
         {
             Destroy(this.gameObject);
+          
             player.GetLife().addLife(1);
+        }
+        cooldown++;
+        if (cooldown >= cooldownMax)
+        {
+           
+                float distance = difference.magnitude;
+                Vector2 direction = difference / distance;
+                direction.Normalize();
+                LaunchProjectile(direction, rotationZ);
+           
+            cooldown = 0;
         }
     }
 
@@ -48,5 +71,18 @@ public class EnemiManagament : MonoBehaviour
             case  0:  item = new Item(); break;
             case 1:  item = new Item(); break;
         }
+    }
+    private void LaunchProjectile(Vector2 direction, float rotationZ)
+    {
+        GameObject b = Instantiate(projectile) as GameObject;
+        
+            b.transform.position = this.GetComponent<Transform>().position;
+      
+        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+        b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+    }
+    private void OnBecameInvisible()
+    {
+        this.gameObject.SetActive(false);
     }
 }

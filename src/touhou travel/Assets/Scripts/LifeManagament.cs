@@ -6,6 +6,7 @@ public class LifeManagament
 {
     public event EventHandler LifeChanged;
     public int lifeAmount;
+    public bool isPLayer;
 
     public LifeManagament (int amount){
 lifeAmount = amount;

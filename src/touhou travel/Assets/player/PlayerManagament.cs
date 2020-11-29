@@ -11,6 +11,7 @@ public class PlayerManagament : MonoBehaviour
     [SerializeField] ProjectileScriptableObject projectileScriptableObject;
     [SerializeField] int amount;
     [SerializeField] GameObject projectile;
+    [SerializeField] GameObject UIGameOver;
     private static Inventory inventory;
     [SerializeField] int cooldownMax;
     [SerializeField] string typeName;
@@ -29,11 +30,10 @@ private LifeManagament life;
     private  void Awake() {
       type = new Type(typeName);
         inventory = new Inventory();
-        life = new LifeManagament(3);
+        setLife();
         projectileManagament = new ProjectileManagament(projectileScriptableObject, amount);
     uiInventory.SetInventory(inventory);
-        
-    uiLife.setLifeUI(life);
+        life.isPLayer = true;
     }
 
     public Inventory GetInventory()
@@ -75,6 +75,13 @@ private LifeManagament life;
                 cooldown = 0;
             }
         }
+        if (life.lifeAmount <= 0)
+        {
+
+            UIGameOver.SetActive(true);
+            this.player.SetActive(false);
+            canva.SetActive(true);
+        }
 
     }
 
@@ -104,6 +111,20 @@ private LifeManagament life;
     public LifeManagament GetLife()
     {
         return life;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "EnemiProjectile")
+        {
+            Destroy(other.gameObject);
+            life.reduceLife(1);
+        }
+    }
+    public void setLife()
+    {
+        life = new LifeManagament(3);
+        uiLife.setLifeUI(life);
+        UIGameOver.SetActive(false);
     }
 }
 
