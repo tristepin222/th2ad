@@ -13,7 +13,7 @@ public class EnemiManagament : MonoBehaviour
     public EventHandler hit;
     UnityEngine.Random rand;
    public Item item;
-    private int cooldown;
+    private int cooldown = 0;
     public int cooldownMax;
     private Vector3 target;
     void Awake()
@@ -48,7 +48,7 @@ public class EnemiManagament : MonoBehaviour
           
             player.GetLife().addLife(1);
         }
-        cooldown++;
+        
         if (cooldown >= cooldownMax)
         {
            
@@ -60,7 +60,10 @@ public class EnemiManagament : MonoBehaviour
             cooldown = 0;
         }
     }
-
+    private void FixedUpdate()
+    {
+        cooldown++;
+    }
     private void randomDrop()
     {
         int randInt = UnityEngine.Random.Range(0, 1);

@@ -3887,7 +3887,7 @@ MonoBehaviour:
   amount: 1
   projectile: {fileID: 8443997447777584357, guid: d5c03065e1a4f1f4aaa6cc336dc0ffcd, type: 3}
   UIGameOver: {fileID: 1499070589}
-  cooldownMax: 200
+  cooldownMax: 60
   typeName: Vampire
   collider2DC: {fileID: 1244419228}
   projectilePreFab: {fileID: 8443997447777584357, guid: d5c03065e1a4f1f4aaa6cc336dc0ffcd, type: 3}

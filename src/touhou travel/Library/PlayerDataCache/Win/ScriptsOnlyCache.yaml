@@ -1,12 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - EnemiManagament
+    - ItemScriptableObject
     - Menu
     - PlayerManagament
     - PlayerMovement
+    - ProjectileScriptableObject
+    - SpawnEnemyManagement
     - UI_Inventory
     - UI_Life
     - colliderManagement
+    - projectileManager
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineFramingTransposer
@@ -66,39 +71,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 602}
     - Class: 114
-      Script: {instanceID: 11846}
+      Script: {instanceID: 11862}
     - Class: 114
-      Script: {instanceID: 12000}
+      Script: {instanceID: 12016}
     - Class: 114
-      Script: {instanceID: 12038}
+      Script: {instanceID: 12054}
     - Class: 114
-      Script: {instanceID: 12180}
+      Script: {instanceID: 12198}
     - Class: 114
-      Script: {instanceID: 12246}
+      Script: {instanceID: 12264}
     - Class: 114
-      Script: {instanceID: 12806}
+      Script: {instanceID: 12506}
     - Class: 114
-      Script: {instanceID: 13004}
+      Script: {instanceID: 12826}
     - Class: 114
-      Script: {instanceID: 13094}
+      Script: {instanceID: 13024}
     - Class: 114
-      Script: {instanceID: 13668}
+      Script: {instanceID: 13114}
     - Class: 114
-      Script: {instanceID: 13858}
+      Script: {instanceID: 13690}
     - Class: 114
-      Script: {instanceID: 14064}
+      Script: {instanceID: 13880}
     - Class: 114
-      Script: {instanceID: 14374}
+      Script: {instanceID: 14086}
     - Class: 114
-      Script: {instanceID: 14776}
+      Script: {instanceID: 14396}
     - Class: 114
-      Script: {instanceID: 15016}
+      Script: {instanceID: 14800}
     - Class: 114
-      Script: {instanceID: 15070}
+      Script: {instanceID: 14944}
     - Class: 114
-      Script: {instanceID: 15396}
+      Script: {instanceID: 14978}
     - Class: 114
-      Script: {instanceID: 15454}
+      Script: {instanceID: 15044}
+    - Class: 114
+      Script: {instanceID: 15098}
+    - Class: 114
+      Script: {instanceID: 15290}
+    - Class: 114
+      Script: {instanceID: 15426}
+    - Class: 114
+      Script: {instanceID: 15484}
+    - Class: 114
+      Script: {instanceID: 15512}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -170,7 +185,7 @@ ScriptsOnlyBuild:
     className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 5999abe5eb441b97104bc97e373851e0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Menu
@@ -324,6 +339,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 67a5c8d71558c2bf485ee9b1d8146c17
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ItemScriptableObject
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -584,7 +605,7 @@ ScriptsOnlyBuild:
     className: CinemachineTransposer
   - hash:
       serializedVersion: 2
-      Hash: 387ade7259bf3fe09c4f66c124b6cca4
+      Hash: e4bdb1942d5b1d0ab0ac008537854be3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerManagament
@@ -776,13 +797,25 @@ ScriptsOnlyBuild:
     className: CinemachineInputProvider
   - hash:
       serializedVersion: 2
+      Hash: b8b81897e998c6ef8c59dc6320ea353e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProjectileScriptableObject
+  - hash:
+      serializedVersion: 2
+      Hash: c26b216cd49b7fc33d1d96b1057f6348
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnEnemyManagement
+  - hash:
+      serializedVersion: 2
       Hash: ffd3ed4fcd23b3e7745287c99a637247
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: Cinemachine3rdPersonAim
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 8b6e49d5cd7e2c8f9a69f98cf2d56e37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: colliderManagement
@@ -810,6 +843,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 817c9ed12d5650bdce0e41588a5f6584
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: projectileManager
   - hash:
       serializedVersion: 2
       Hash: a2612813f45d0ced02c3e4bc9dbea8b4
@@ -906,6 +945,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Toggle
+  - hash:
+      serializedVersion: 2
+      Hash: 5fa697a6e8049937876f5a306c0a11c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemiManagament
   - hash:
       serializedVersion: 2
       Hash: 8220b46879dc5e37db1b940c938f5744

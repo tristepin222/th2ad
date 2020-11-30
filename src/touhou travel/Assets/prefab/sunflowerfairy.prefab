@@ -116,7 +116,7 @@ MonoBehaviour:
   projectile: {fileID: 2111007475749364342, guid: 3f6d7f56094c0ff48a99ad70a30a0b50, type: 3}
   bulletSpeed: 5
   player: {fileID: 0}
-  cooldownMax: 200
+  cooldownMax: 15
 --- !u!50 &1300201617666197891
 Rigidbody2D:
   serializedVersion: 4
