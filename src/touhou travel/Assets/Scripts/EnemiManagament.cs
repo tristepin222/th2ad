@@ -14,7 +14,10 @@ public class EnemiManagament : MonoBehaviour
     UnityEngine.Random rand;
    public Item item;
     private int cooldown = 0;
+    private int cooldownDanmaku = 0;
     public int cooldownMax;
+    public int cooldownDanmakuMax;
+    public int bulletAmount;
     private Vector3 target;
     void Awake()
     {
@@ -40,8 +43,7 @@ public class EnemiManagament : MonoBehaviour
     private void Update()
     {
         target = player.transform.position;
-        Vector3 difference = target - this.transform.position;
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        
         if (life.lifeAmount <= 0)
         {
             Destroy(this.gameObject);
@@ -51,18 +53,37 @@ public class EnemiManagament : MonoBehaviour
         
         if (cooldown >= cooldownMax)
         {
-           
-                float distance = difference.magnitude;
+            Vector3 difference = target - this.transform.position;
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+            float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
                 direction.Normalize();
-                LaunchProjectile(direction, rotationZ);
-           
+             LaunchProjectile(direction, rotationZ);
+
             cooldown = 0;
+        }
+        if (cooldownDanmaku >= cooldownDanmakuMax)
+        {
+            
+            for (int i = 0; i < bulletAmount; i++)
+            {
+                Vector3 difference = target - this.transform.position - new Vector3(i, i, 0);
+                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+                float distance = difference.magnitude;
+                Vector2 direction = difference / distance;
+                
+               LaunchProjectile(direction, rotationZ);
+            }
+
+            cooldownDanmaku = 0;
         }
     }
     private void FixedUpdate()
     {
         cooldown++;
+        cooldownDanmaku++;
     }
     private void randomDrop()
     {

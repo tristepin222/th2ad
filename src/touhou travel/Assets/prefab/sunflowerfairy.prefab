@@ -117,6 +117,8 @@ MonoBehaviour:
   bulletSpeed: 5
   player: {fileID: 0}
   cooldownMax: 15
+  cooldownDanmakuMax: 120
+  bulletAmount: 10
 --- !u!50 &1300201617666197891
 Rigidbody2D:
   serializedVersion: 4
