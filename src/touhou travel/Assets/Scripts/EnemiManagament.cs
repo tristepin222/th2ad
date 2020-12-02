@@ -19,6 +19,7 @@ public class EnemiManagament : MonoBehaviour
     public int cooldownDanmakuMax;
     public int bulletAmount;
     private Vector3 target;
+    private Vector3 difference;
     void Awake()
     {
         life = new LifeManagament(2);
@@ -42,8 +43,8 @@ public class EnemiManagament : MonoBehaviour
     }
     private void Update()
     {
-        target = player.transform.position;
         
+
         if (life.lifeAmount <= 0)
         {
             Destroy(this.gameObject);
@@ -53,7 +54,8 @@ public class EnemiManagament : MonoBehaviour
         
         if (cooldown >= cooldownMax)
         {
-            Vector3 difference = target - this.transform.position;
+            target = player.transform.position;
+            difference = target - this.transform.position;
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
             float distance = difference.magnitude;
@@ -65,16 +67,18 @@ public class EnemiManagament : MonoBehaviour
         }
         if (cooldownDanmaku >= cooldownDanmakuMax)
         {
-            
-            for (int i = 0; i < bulletAmount; i++)
+           
+           for (int i = 0-bulletAmount; i < bulletAmount; i++)
             {
-                Vector3 difference = target - this.transform.position - new Vector3(i, i, 0);
-                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                target = player.transform.position - new Vector3(i, i, 0);
+                difference = target - this.transform.position;
 
+                difference.Normalize();
+                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
                 float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
-                
-               LaunchProjectile(direction, rotationZ);
+                direction.Normalize();
+                LaunchProjectile(direction, rotationZ);
             }
 
             cooldownDanmaku = 0;
