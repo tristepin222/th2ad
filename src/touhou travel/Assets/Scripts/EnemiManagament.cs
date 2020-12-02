@@ -65,24 +65,7 @@ public class EnemiManagament : MonoBehaviour
 
             cooldown = 0;
         }
-        if (cooldownDanmaku >= cooldownDanmakuMax)
-        {
-           
-           for (int i = 0-bulletAmount; i < bulletAmount; i++)
-            {
-                target = player.transform.position - new Vector3(i, i, 0);
-                difference = target - this.transform.position;
-
-                difference.Normalize();
-                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-                float distance = difference.magnitude;
-                Vector2 direction = difference / distance;
-                direction.Normalize();
-                LaunchProjectile(direction, rotationZ);
-            }
-
-            cooldownDanmaku = 0;
-        }
+        
     }
     private void FixedUpdate()
     {
@@ -106,7 +89,7 @@ public class EnemiManagament : MonoBehaviour
         
             b.transform.position = this.GetComponent<Transform>().position;
       
-        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+       b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }
     private void OnBecameInvisible()
