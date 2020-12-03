@@ -8,9 +8,11 @@ public class EnemiManagament : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
     [SerializeField] public float bulletSpeed;
+    [SerializeField] public TypeScriptable tType;
     public PlayerManagament player;
     private LifeManagament life;
     public EventHandler hit;
+    public Type type;
     UnityEngine.Random rand;
    public Item item;
     private int cooldown = 0;
@@ -24,6 +26,7 @@ public class EnemiManagament : MonoBehaviour
     {
         life = new LifeManagament(2);
         rand = new UnityEngine.Random();
+        type = new Type { type = tType };
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
        player = GPlayer.GetComponent<PlayerManagament>();
         life.isPLayer = false;

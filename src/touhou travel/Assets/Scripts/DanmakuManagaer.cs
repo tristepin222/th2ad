@@ -5,13 +5,16 @@ using UnityEngine;
 public class DanmakuManagaer : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
+    [SerializeField] GameObject projectile2;
     [SerializeField] public float bulletSpeed;
     public PlayerManagament player;
     public int cooldownDanmakuMax;
+    public int cooldownDanmakuMax2;
     public int bulletAmount;
     private Vector3 target;
     private Vector3 difference;
     private int cooldownDanmaku = 0;
+    private int cooldownDanmaku2 = 0;
     void Start()
     {
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -32,12 +35,26 @@ public class DanmakuManagaer : MonoBehaviour
                 float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
                 direction.Normalize();
-                LaunchProjectile(direction, rotationZ);
+                LaunchProjectile(direction, rotationZ, projectile);
           
             cooldownDanmaku = 0;
         }
+        if (cooldownDanmaku2 >= cooldownDanmakuMax2)
+        {
+            target = player.transform.position;
+            difference = target - this.transform.position;
+
+            difference.Normalize();
+            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            float distance = difference.magnitude;
+            Vector2 direction = difference / distance;
+            direction.Normalize();
+            LaunchProjectile(direction, rotationZ, projectile2);
+
+            cooldownDanmaku2 = 0;
+        }
     }
-    private void LaunchProjectile(Vector2 direction, float rotationZ)
+    private void LaunchProjectile(Vector2 direction, float rotationZ, GameObject projectile)
     {
         GameObject b = Instantiate(projectile) as GameObject;
 
@@ -48,13 +65,16 @@ public class DanmakuManagaer : MonoBehaviour
         for(int i = 0; i < b.transform.childCount; i++)
         {
             Rigidbody2D c = b.transform.GetChild(i).GetComponent<Rigidbody2D>();
-            Vector2 direction2 = Vector2.MoveTowards(c.GetComponent<Transform>().position, new Vector2(10, 10), 0.1f) / bulletSpeed;
-            c.velocity = direction2;
+
+            c.velocity = c.transform.right;
+
+
         }
         
     }
     private void FixedUpdate()
     {
         cooldownDanmaku++;
+        cooldownDanmaku2++;
     }
 }

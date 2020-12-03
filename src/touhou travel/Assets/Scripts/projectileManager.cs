@@ -7,6 +7,7 @@ public class projectileManager : MonoBehaviour
     [SerializeField] ProjectileScriptableObject projectileScriptableObject;
     [SerializeField] int amount;
     [SerializeField] float speed;
+  
     private Rigidbody2D rb;
     private Vector2 bounds;
     private SpriteRenderer sr;
@@ -36,6 +37,7 @@ public class projectileManager : MonoBehaviour
     private void FixedUpdate()
     {
         time++;
+       
 
     }
 

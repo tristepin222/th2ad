@@ -16,7 +16,8 @@ public class PlayerManagament : MonoBehaviour
     [SerializeField] int cooldownMax;
     [SerializeField] string typeName;
  [SerializeField] private  Collider2D collider2DC;
- private Type type;
+    [SerializeField] TypeScriptable tType;
+    private Type type;
 private LifeManagament life;
     private GameObject canva;
     private ProjectileManagament projectileManagament;
@@ -28,7 +29,7 @@ private LifeManagament life;
     [SerializeField] public GameObject player;
     [SerializeField] int bulletAmount;
     private  void Awake() {
-      type = new Type(typeName);
+      type = new Type { type = tType };
         inventory = new Inventory();
         setLife();
         projectileManagament = new ProjectileManagament(projectileScriptableObject, amount);

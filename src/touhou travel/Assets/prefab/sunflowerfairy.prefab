@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2111007475749364342, guid: 3f6d7f56094c0ff48a99ad70a30a0b50, type: 3}
   bulletSpeed: 2
+  tType: {fileID: 11400000, guid: 59755c1e50e479a479722bd1ce75da76, type: 2}
   player: {fileID: 0}
   cooldownMax: 15
   cooldownDanmakuMax: 120
@@ -154,7 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 8329240233661763209, guid: b26c959722db24a4da6b59cadaf6d432, type: 3}
+  projectile2: {fileID: 1237933504152449638, guid: afc738efc0080a24db64a1bff4a9eacd, type: 3}
   bulletSpeed: 2
   player: {fileID: 0}
-  cooldownDanmakuMax: 15
+  cooldownDanmakuMax: 120
+  cooldownDanmakuMax2: 240
   bulletAmount: 1
