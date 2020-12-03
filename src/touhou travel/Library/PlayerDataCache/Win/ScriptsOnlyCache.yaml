@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - DanmakuManagaer
     - EnemiManagament
     - ItemScriptableObject
     - Menu
@@ -8,6 +9,7 @@ ScriptsOnlyBuild:
     - PlayerMovement
     - ProjectileScriptableObject
     - SpawnEnemyManagement
+    - TypeScriptable
     - UI_Inventory
     - UI_Life
     - colliderManagement
@@ -71,49 +73,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 602}
     - Class: 114
-      Script: {instanceID: 11862}
+      Script: {instanceID: 11822}
     - Class: 114
-      Script: {instanceID: 12016}
+      Script: {instanceID: 11976}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 12014}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12158}
     - Class: 114
-      Script: {instanceID: 12264}
+      Script: {instanceID: 12224}
     - Class: 114
-      Script: {instanceID: 12506}
+      Script: {instanceID: 12466}
     - Class: 114
-      Script: {instanceID: 12826}
+      Script: {instanceID: 12788}
     - Class: 114
-      Script: {instanceID: 13024}
+      Script: {instanceID: 12884}
     - Class: 114
-      Script: {instanceID: 13114}
+      Script: {instanceID: 12988}
     - Class: 114
-      Script: {instanceID: 13690}
+      Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13880}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 14086}
+      Script: {instanceID: 13844}
     - Class: 114
-      Script: {instanceID: 14396}
+      Script: {instanceID: 14050}
     - Class: 114
-      Script: {instanceID: 14800}
+      Script: {instanceID: 14246}
+    - Class: 114
+      Script: {instanceID: 14362}
+    - Class: 114
+      Script: {instanceID: 14766}
+    - Class: 114
+      Script: {instanceID: 14910}
     - Class: 114
       Script: {instanceID: 14944}
     - Class: 114
-      Script: {instanceID: 14978}
+      Script: {instanceID: 15010}
     - Class: 114
-      Script: {instanceID: 15044}
+      Script: {instanceID: 15064}
     - Class: 114
-      Script: {instanceID: 15098}
+      Script: {instanceID: 15256}
     - Class: 114
-      Script: {instanceID: 15290}
+      Script: {instanceID: 15392}
     - Class: 114
-      Script: {instanceID: 15426}
+      Script: {instanceID: 15450}
     - Class: 114
-      Script: {instanceID: 15484}
-    - Class: 114
-      Script: {instanceID: 15512}
+      Script: {instanceID: 15478}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -395,6 +401,12 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: lootSystem
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -407,7 +419,7 @@ ScriptsOnlyBuild:
     className: CinemachineFreeLook
   - hash:
       serializedVersion: 2
-      Hash: 2445479c25b0a7273e0588f722f7baeb
+      Hash: e9c6fd4d1aded3adc4978266e524b5dc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -435,6 +447,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: NoiseSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 1b21fbf84fa89467dcda0252331d78fb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TypeScriptable
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -605,7 +623,7 @@ ScriptsOnlyBuild:
     className: CinemachineTransposer
   - hash:
       serializedVersion: 2
-      Hash: e4bdb1942d5b1d0ab0ac008537854be3
+      Hash: 900eaebdcb1f55098e93b5d7424c1055
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerManagament
@@ -657,6 +675,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineMixingCamera
+  - hash:
+      serializedVersion: 2
+      Hash: c01c85785aec8698be01a5e0d7114a69
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DanmakuManagaer
   - hash:
       serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
@@ -947,7 +971,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 5fa697a6e8049937876f5a306c0a11c4
+      Hash: c55abe444230a4b2e3cd1f1d1c72b3c6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemiManagament
@@ -990,5 +1014,5 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/jessy.borcard/Documents/GitHub/th2ad/src/touhou travel/buildRun/touhou
+  playerPath: C:/Users/Tristepin222/Documents/gizzter/th2ad/src/touhou travel/buildRun/touhou
     travel.exe

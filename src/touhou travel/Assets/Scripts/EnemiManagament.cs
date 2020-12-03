@@ -22,11 +22,13 @@ public class EnemiManagament : MonoBehaviour
     public int bulletAmount;
     private Vector3 target;
     private Vector3 difference;
+    private Inventory inventory;
     void Awake()
     {
         life = new LifeManagament(2);
         rand = new UnityEngine.Random();
         type = new Type { type = tType };
+        inventory = new Inventory();
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
        player = GPlayer.GetComponent<PlayerManagament>();
         life.isPLayer = false;
@@ -98,5 +100,9 @@ public class EnemiManagament : MonoBehaviour
     private void OnBecameInvisible()
     {
         this.gameObject.SetActive(false);
+    }
+    public Inventory GetInventory()
+    {
+        return Inventory;
     }
 }
