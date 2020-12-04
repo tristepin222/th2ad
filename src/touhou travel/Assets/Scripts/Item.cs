@@ -16,6 +16,7 @@ public class Item
 
     // Update is called once per frame
     public ItemScriptableObject itemScriptableObject;
+    public ItemType item;
     public int amount; 
     public  int maxAmount;
     public bool maxedOut;

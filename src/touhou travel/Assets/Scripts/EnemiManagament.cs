@@ -9,6 +9,7 @@ public class EnemiManagament : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] public float bulletSpeed;
     [SerializeField] public TypeScriptable tType;
+    [SerializeField] public GameObject loot;
     public PlayerManagament player;
     private LifeManagament life;
     public EventHandler hit;
@@ -51,7 +52,7 @@ public class EnemiManagament : MonoBehaviour
         if (life.lifeAmount <= 0)
         {
             Destroy(this.gameObject);
-          
+            SpawnItemInWorld();
             player.GetLife().addLife(1);
         }
         
@@ -98,5 +99,10 @@ public class EnemiManagament : MonoBehaviour
     private void OnBecameInvisible()
     {
         this.gameObject.SetActive(false);
+    }
+    public void SpawnItemInWorld()
+    {
+        loot = Instantiate(loot) as GameObject;
+        loot.transform.position = this.transform.position;
     }
 }
