@@ -11,6 +11,7 @@ TagManager:
   - Enemi
   - ProjectilePlayer
   - EnemiProjectile
+  - collectable
   layers:
   - Default
   - TransparentFX

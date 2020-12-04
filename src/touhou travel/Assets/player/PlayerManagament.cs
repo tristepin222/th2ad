@@ -37,6 +37,7 @@ private LifeManagament life;
         life.isPLayer = true;
     }
 
+   
     public Inventory GetInventory()
     {
         return inventory;
@@ -123,6 +124,13 @@ private LifeManagament life;
         {
             Destroy(other.gameObject);
             life.reduceLife(1);
+        }
+        if(other.tag == "collectable")
+        {
+            GameObject otherB = other.gameObject;
+            lootManager loot = otherB.GetComponent<lootManager>();
+            inventory.AddInventory(loot.GetItem());
+            Destroy(otherB);
         }
     }
     public void setLife()
