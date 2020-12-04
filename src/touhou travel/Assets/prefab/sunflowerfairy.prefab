@@ -118,6 +118,7 @@ MonoBehaviour:
   projectile: {fileID: 2111007475749364342, guid: 3f6d7f56094c0ff48a99ad70a30a0b50, type: 3}
   bulletSpeed: 2
   tType: {fileID: 11400000, guid: 59755c1e50e479a479722bd1ce75da76, type: 2}
+  loot: {fileID: 5244307197535281814, guid: a9973c31cb0e14e44a34343b9c3bedee, type: 3}
   player: {fileID: 0}
   cooldownMax: 15
   cooldownDanmakuMax: 120

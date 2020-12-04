@@ -9,6 +9,7 @@ public class EnemiManagament : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] public float bulletSpeed;
     [SerializeField] public TypeScriptable tType;
+    [SerializeField] public GameObject loot;
     public PlayerManagament player;
     private LifeManagament life;
     public EventHandler hit;
@@ -22,13 +23,11 @@ public class EnemiManagament : MonoBehaviour
     public int bulletAmount;
     private Vector3 target;
     private Vector3 difference;
-    private Inventory inventory;
     void Awake()
     {
         life = new LifeManagament(2);
         rand = new UnityEngine.Random();
         type = new Type { type = tType };
-        inventory = new Inventory();
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
        player = GPlayer.GetComponent<PlayerManagament>();
         life.isPLayer = false;
@@ -53,7 +52,7 @@ public class EnemiManagament : MonoBehaviour
         if (life.lifeAmount <= 0)
         {
             Destroy(this.gameObject);
-          
+            SpawnItemInWorld();
             player.GetLife().addLife(1);
         }
         
@@ -101,8 +100,9 @@ public class EnemiManagament : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-    public Inventory GetInventory()
+    public void SpawnItemInWorld()
     {
-        return Inventory;
+        loot = Instantiate(loot) as GameObject;
+        loot.transform.position = this.transform.position;
     }
 }

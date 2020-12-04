@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class lootSystem : MonoBehaviour
 {
-    public TypeScriptable tType;
-    public EnemiManagament enemi;
-    private Inventory inventory;
-    // Start is called before the first frame update
-    void Start()
+
+    
+    [SerializeField] GameObject b;
+    private Item item;
+    private void Start()
     {
-        this.inventory = enemi.GetInventory();
-        Type type = new Type { type = tType };
-        
+      
+       
     }
 
-    // Update is called once per frame
-    void Update()
+   public void SpawnItemInWorld(Transform position)
     {
-        
+        b = Instantiate(b) as GameObject;
+        b.transform.position = transform.position;
     }
+
+
 }
