@@ -13,8 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public CapsuleCollider2D cc2;
     private Vector2 sizeC;
     private Vector2 sizeC2;
-
+    private Animator anim;
     // Update is called once per frame
+
+        private void Start()
+    {
+        anim = GetComponent<Animator>();
+        anim.SetBool("isRunning", false);
+    }
     void Update()
     {
         //input
@@ -38,6 +44,14 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 1f;
             cc2.size = new Vector2(0.05f, 0.07f);
+        }
+        if(movement.x == 0 && movement.y == 0 )
+        {
+            anim.SetBool("isRunning", false);
+        }
+        else
+        {
+            anim.SetBool("isRunning", true);
         }
         rb.MovePosition(rb.position + movement * MOVESPEED * speed * Time.fixedDeltaTime);
 
