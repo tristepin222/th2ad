@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1300201617666197890}
   - component: {fileID: 1300201617666197891}
   - component: {fileID: 3912212534297034992}
-  - component: {fileID: 450631549642495635}
   m_Layer: 0
   m_Name: sunflowerfairy
   m_TagString: Untagged
@@ -156,24 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d8f0d2a7af08ec4a9399aabadfd78db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 8329240233661763209, guid: b26c959722db24a4da6b59cadaf6d432, type: 3}
+  projectile: {fileID: 6890052199265396913, guid: e3622ee39acbaf5449d821393f8deaa0, type: 3}
   projectile2: {fileID: 1237933504152449638, guid: afc738efc0080a24db64a1bff4a9eacd, type: 3}
   bulletSpeed: 2
   player: {fileID: 0}
   cooldownDanmakuMax: 120
   cooldownDanmakuMax2: 240
   bulletAmount: 1
---- !u!114 &450631549642495635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300201617666197894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3040be83d20310f44852b781e42e4405, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: {fileID: 11400000, guid: 59755c1e50e479a479722bd1ce75da76, type: 2}
-  enemi: {fileID: 1300201617666197890}
