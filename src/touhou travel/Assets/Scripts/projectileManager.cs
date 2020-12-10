@@ -7,7 +7,8 @@ public class projectileManager : MonoBehaviour
     [SerializeField] ProjectileScriptableObject projectileScriptableObject;
     [SerializeField] int amount;
     [SerializeField] float speed;
-  
+    [SerializeField] Color color;
+
     private Rigidbody2D rb;
     private Vector2 bounds;
     private SpriteRenderer sr;
@@ -19,7 +20,7 @@ public class projectileManager : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         sr = this.GetComponent<SpriteRenderer>();
         sr.sprite = projectileScriptableObject.sprite;
-        sr.color = new Color(255, 255, 8);
+        
     }
 
     // Update is called once per frame

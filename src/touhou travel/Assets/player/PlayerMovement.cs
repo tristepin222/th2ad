@@ -20,13 +20,16 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("isRunning", false);
+        anim.SetBool("isSide", false);
+        anim.SetBool("isFlip", false);
     }
     void Update()
     {
         //input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-      
+        
+
         sizeC = cc2.size;
         sizeC2 = new Vector2(0.01f, 0.014f);
     }
@@ -52,6 +55,26 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             anim.SetBool("isRunning", true);
+        }
+        if(movement.x < 0)
+        {
+            
+            anim.SetBool("isRunning", true);
+            anim.SetBool("isFlip", true);
+        }
+        else
+        {
+            anim.SetBool("isFlip", false);
+        }
+
+        if (movement.x > 0)
+        {
+            anim.SetBool("isRunning", true);
+            anim.SetBool("isSide", true);
+        }
+        else
+        {
+            anim.SetBool("isSide", false);
         }
         rb.MovePosition(rb.position + movement * MOVESPEED * speed * Time.fixedDeltaTime);
 
