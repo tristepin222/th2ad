@@ -19,9 +19,9 @@ public class PlayerMovement : MonoBehaviour
         private void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetBool("isRunning", false);
-        anim.SetBool("isSide", false);
-        anim.SetBool("isFlip", false);
+        anim.SetBool("IsRunning", false);
+        anim.SetBool("IsSide", false);
+        anim.SetBool("IsFlip", false);
     }
     void Update()
     {
@@ -50,31 +50,31 @@ public class PlayerMovement : MonoBehaviour
         }
         if(movement.x == 0 && movement.y == 0 )
         {
-            anim.SetBool("isRunning", false);
+            anim.SetBool("IsRunning", false);
         }
         else
         {
-            anim.SetBool("isRunning", true);
+            anim.SetBool("IsRunning", true);
         }
         if(movement.x < 0)
         {
             
-            anim.SetBool("isRunning", true);
-            anim.SetBool("isFlip", true);
+            anim.SetBool("IsRunning", true);
+            anim.SetBool("IsFlip", true);
         }
         else
         {
-            anim.SetBool("isFlip", false);
+            anim.SetBool("IsFlip", false);
         }
 
         if (movement.x > 0)
         {
-            anim.SetBool("isRunning", true);
-            anim.SetBool("isSide", true);
+            anim.SetBool("IsRunning", true);
+            anim.SetBool("IsSide", true);
         }
         else
         {
-            anim.SetBool("isSide", false);
+            anim.SetBool("IsSide", false);
         }
         rb.MovePosition(rb.position + movement * MOVESPEED * speed * Time.fixedDeltaTime);
 
