@@ -24,10 +24,12 @@ public class DanmakuManagaer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (cooldownDanmaku >= cooldownDanmakuMax)
+        if (projectile != null)
         {
-            target = player.transform.position;
+
+            if (cooldownDanmaku >= cooldownDanmakuMax)
+            {
+                target = player.transform.position;
                 difference = target - this.transform.position;
 
                 difference.Normalize();
@@ -36,22 +38,26 @@ public class DanmakuManagaer : MonoBehaviour
                 Vector2 direction = difference / distance;
                 direction.Normalize();
                 LaunchProjectile(direction, rotationZ, projectile);
-          
-            cooldownDanmaku = 0;
+
+                cooldownDanmaku = 0;
+            }
         }
-        if (cooldownDanmaku2 >= cooldownDanmakuMax2)
+        if (projectile2 != null)
         {
-            target = player.transform.position;
-            difference = target - this.transform.position;
+            if (cooldownDanmaku2 >= cooldownDanmakuMax2)
+            {
+                target = player.transform.position;
+                difference = target - this.transform.position;
 
-            difference.Normalize();
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            float distance = difference.magnitude;
-            Vector2 direction = difference / distance;
-            direction.Normalize();
-            LaunchProjectile(direction, rotationZ, projectile2);
+                difference.Normalize();
+                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                float distance = difference.magnitude;
+                Vector2 direction = difference / distance;
+                direction.Normalize();
+                LaunchProjectile(direction, rotationZ, projectile2);
 
-            cooldownDanmaku2 = 0;
+                cooldownDanmaku2 = 0;
+            }
         }
     }
     private void LaunchProjectile(Vector2 direction, float rotationZ, GameObject projectile)

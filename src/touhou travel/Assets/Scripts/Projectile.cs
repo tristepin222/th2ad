@@ -34,7 +34,8 @@ public class Projectile
         Rose,
         Shard,
         Star2,
-        Star
+        Star,
+        WildCard
     }
 
     // Update is called once per frame
