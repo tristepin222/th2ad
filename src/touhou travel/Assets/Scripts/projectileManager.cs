@@ -7,7 +7,7 @@ public class projectileManager : MonoBehaviour
     [SerializeField] ProjectileScriptableObject projectileScriptableObject;
     [SerializeField] int amount;
     [SerializeField] float speed;
-    [SerializeField] Color color;
+    [SerializeField] bool isBeam;
 
     private Rigidbody2D rb;
     private Vector2 bounds;
@@ -44,7 +44,10 @@ public class projectileManager : MonoBehaviour
 
     private void OnBecameInvisible()
     {
-        Destroy(this.gameObject);
+        if (!isBeam)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
 }

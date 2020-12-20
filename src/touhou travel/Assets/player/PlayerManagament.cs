@@ -11,6 +11,7 @@ public class PlayerManagament : MonoBehaviour
     [SerializeField] ProjectileScriptableObject projectileScriptableObject;
     [SerializeField] int amount;
     [SerializeField] GameObject projectile;
+    [SerializeField] GameObject bomb;
     [SerializeField] GameObject UIGameOver;
     private static Inventory inventory;
     [SerializeField] int cooldownMax;
@@ -26,6 +27,7 @@ private LifeManagament life;
     private int cooldown = 0;
     private Vector3 target;
     private KeyCode esc = KeyCode.Escape;
+    private KeyCode xKey = KeyCode.X;
     [SerializeField] public GameObject player;
     [SerializeField] int bulletAmount;
     private  void Awake() {
@@ -72,7 +74,7 @@ private LifeManagament life;
                     float distance = difference.magnitude;
                     Vector2 direction = difference / distance;
                     direction.Normalize();
-                    LaunchProjectile(direction, rotationZ, i);
+                    LaunchProjectile(direction, rotationZ, projectile, i);
                 }
                 cooldown = 0;
             }
@@ -84,6 +86,14 @@ private LifeManagament life;
             this.player.SetActive(false);
             canva.SetActive(true);
         }
+        if (Input.GetKeyDown(xKey))
+        {
+
+            float distance = difference.magnitude;
+            Vector2 direction = difference / distance;
+            direction.Normalize();
+            LaunchProjectile(direction, rotationZ, bomb);
+        }
 
     }
     private void FixedUpdate()
@@ -91,7 +101,7 @@ private LifeManagament life;
         cooldown++;
     }
 
-    private void LaunchProjectile(Vector2 direction, float rotationZ, int offset)
+    private void LaunchProjectile(Vector2 direction, float rotationZ,  GameObject projectile, int offset = 1)
     {
         
            
