@@ -17,6 +17,33 @@ TextureImporter:
   - first:
       213: -3233931069374104375
     second: _okouchibi_4
+  - first:
+      213: 5893343471247881142
+    second: _okouchibi_5
+  - first:
+      213: -8940944610258665403
+    second: _okouchibi_6
+  - first:
+      213: 7365292260198561294
+    second: _okouchibi_7
+  - first:
+      213: -8114506149782824583
+    second: _okouchibi_8
+  - first:
+      213: -3906215656976382743
+    second: _okouchibi_9
+  - first:
+      213: -3129759387142215150
+    second: _okouchibi_10
+  - first:
+      213: 320150839192415684
+    second: _okouchibi_11
+  - first:
+      213: -2931038699623391107
+    second: _okouchibi_12
+  - first:
+      213: 4253478229310060022
+    second: _okouchibi_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -61,7 +88,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,6 +127,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -108,7 +147,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 117
-        y: 619
+        y: 875
         width: 22
         height: 42
       alignment: 0
@@ -129,7 +168,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 373
-        y: 619
+        y: 875
         width: 22
         height: 41
       alignment: 0
@@ -149,8 +188,8 @@ TextureImporter:
       name: _okouchibi_2
       rect:
         serializedVersion: 2
-        x: 117
-        y: 363
+        x: 629
+        y: 875
         width: 22
         height: 42
       alignment: 0
@@ -170,8 +209,8 @@ TextureImporter:
       name: _okouchibi_3
       rect:
         serializedVersion: 2
-        x: 373
-        y: 363
+        x: 885
+        y: 875
         width: 22
         height: 42
       alignment: 0
@@ -192,7 +231,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 117
-        y: 107
+        y: 619
         width: 22
         height: 42
       alignment: 0
@@ -204,6 +243,195 @@ TextureImporter:
       bones: []
       spriteID: 9cc7bd593d4ce13d0800000000000000
       internalID: -3233931069374104375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 619
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3f81fa9ac59c150800000000000000
+      internalID: 5893343471247881142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_6
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 619
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540c6158f326be380800000000000000
+      internalID: -8940944610258665403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_7
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 619
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e06b114a946c63660800000000000000
+      internalID: 7365292260198561294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_8
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 363
+        width: 21
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979d87636ab736f80800000000000000
+      internalID: -8114506149782824583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_9
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 363
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e48ad55e855ac9c0800000000000000
+      internalID: -3906215656976382743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_10
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 363
+        width: 24
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21aa1f86b6cd094d0800000000000000
+      internalID: -3129759387142215150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_11
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 363
+        width: 22
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cd6b94fd77617400800000000000000
+      internalID: 320150839192415684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_12
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 107
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d70660ef4dbd257d0800000000000000
+      internalID: -2931038699623391107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _okouchibi_13
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 107
+        width: 23
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f532e5e9e3670b30800000000000000
+      internalID: 4253478229310060022
       vertices: []
       indices: 
       edges: []

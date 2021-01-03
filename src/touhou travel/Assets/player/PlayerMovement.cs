@@ -20,8 +20,9 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetBool("IsRunning", false);
-        anim.SetBool("IsSide", false);
-        anim.SetBool("IsFlip", false);
+        anim.SetBool("IsRunningRight", false);
+        anim.SetBool("IsRunningLeft", false); 
+        anim.SetBool("IsRunningUp", false);
     }
     void Update()
     {
@@ -37,6 +38,10 @@ public class PlayerMovement : MonoBehaviour
     //different from update, is dependant from the system not the game update rate
     void FixedUpdate()
     {
+        anim.SetBool("IsRunning", false);
+        anim.SetBool("IsRunningRight", false);
+        anim.SetBool("IsRunningLeft", false);
+        anim.SetBool("IsRunningUp", false);
         // movement 
         if (Input.GetKey(shift))
         {
@@ -48,34 +53,23 @@ public class PlayerMovement : MonoBehaviour
             speed = 1f;
             cc2.size = new Vector2(0.05f, 0.07f);
         }
-        if(movement.x == 0 && movement.y == 0 )
-        {
-            anim.SetBool("IsRunning", false);
-        }
-        else
+        if(movement.y < 0  )
         {
             anim.SetBool("IsRunning", true);
         }
-        if(movement.x < 0)
+        if(movement.y > 0)
         {
-            
-            anim.SetBool("IsRunning", true);
-            anim.SetBool("IsFlip", true);
+            anim.SetBool("IsRunningUp", true);
         }
-        else
+        if (movement.x < 0)
         {
-            anim.SetBool("IsFlip", false);
+            anim.SetBool("IsRunningLeft", true);
         }
-
         if (movement.x > 0)
         {
-            anim.SetBool("IsRunning", true);
-            anim.SetBool("IsSide", true);
+            anim.SetBool("IsRunningRight", true);
         }
-        else
-        {
-            anim.SetBool("IsSide", false);
-        }
+
         rb.MovePosition(rb.position + movement * MOVESPEED * speed * Time.fixedDeltaTime);
 
        
