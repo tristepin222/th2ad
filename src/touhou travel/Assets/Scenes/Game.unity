@@ -3990,7 +3990,7 @@ MonoBehaviour:
   projectileScriptableObject: {fileID: 11400000, guid: 98a6a3caab60e594e86c86bea58b10b1, type: 2}
   amount: 1
   projectile: {fileID: 8443997447777584357, guid: d5c03065e1a4f1f4aaa6cc336dc0ffcd, type: 3}
-  bomb: {fileID: 0}
+  bomb: {fileID: 4140902588373831117, guid: aeb12b17834caee46a07cc4bbf99404e, type: 3}
   UIGameOver: {fileID: 1499070589}
   cooldownMax: 60
   typeName: Vampire

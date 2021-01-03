@@ -79,20 +79,22 @@ private LifeManagament life;
                 cooldown = 0;
             }
         }
-        if (life.lifeAmount <= 0)
-        {
+        
+            if (life.lifeAmount <= 0)
+            {
 
-            UIGameOver.SetActive(true);
-            this.player.SetActive(false);
-            canva.SetActive(true);
-        }
+                UIGameOver.SetActive(true);
+                this.player.SetActive(false);
+                canva.SetActive(true);
+            }
+       
         if (Input.GetKeyDown(xKey))
         {
-
+            
             float distance = difference.magnitude;
             Vector2 direction = difference / distance;
             direction.Normalize();
-            LaunchProjectile(direction, rotationZ, bomb);
+            LaunchProjectile(direction, rotationZ, bomb,  isBomb:true);
         }
 
     }
@@ -101,24 +103,31 @@ private LifeManagament life;
         cooldown++;
     }
 
-    private void LaunchProjectile(Vector2 direction, float rotationZ,  GameObject projectile, int offset = 1)
+    private void LaunchProjectile(Vector2 direction, float rotationZ,  GameObject projectile, int offset = 1, bool isBomb = false)
     {
-        
-           
+
+
         
         GameObject b = Instantiate(projectile) as GameObject;
         float fOffset = 0.5f;
-        if (offset >= 2)
+        if (isBomb)
         {
-            b.transform.position = this.GetComponent<Transform>().position - new Vector3(fOffset, 0, 0) + new Vector3(0, fOffset, 0);
-        }
-        else if(offset >= 1)
-        {
-            b.transform.position = this.GetComponent<Transform>().position + new Vector3(fOffset, fOffset, 0);
+            b.transform.position = this.GetComponent<Transform>().position;
         }
         else
         {
-            b.transform.position = this.GetComponent<Transform>().position;
+            if (offset >= 2)
+            {
+                b.transform.position = this.GetComponent<Transform>().position - new Vector3(fOffset, 0, 0) + new Vector3(0, fOffset, 0);
+            }
+            else if (offset >= 1)
+            {
+                b.transform.position = this.GetComponent<Transform>().position + new Vector3(fOffset, fOffset, 0);
+            }
+            else
+            {
+                b.transform.position = this.GetComponent<Transform>().position;
+            }
         }
         b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;

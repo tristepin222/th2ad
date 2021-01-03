@@ -69,8 +69,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileScriptableObject: {fileID: 11400000, guid: 98a6a3caab60e594e86c86bea58b10b1, type: 2}
   amount: 1
+  damage: 1
   speed: 2
-  color: {r: 0, g: 0, b: 0, a: 0}
+  isBeam: 0
 --- !u!212 &3819297929493854543
 SpriteRenderer:
   m_ObjectHideFlags: 0

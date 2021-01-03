@@ -41,8 +41,14 @@ public class EnemiManagament : MonoBehaviour
     {
         if(other.tag == "ProjectilePlayer")
         {
-            Destroy(other.gameObject);
-            life.reduceLife(1);
+            projectileManager projecile = other.gameObject.GetComponent<projectileManager>();
+            if (!projecile.isBeam)
+            {
+
+
+                Destroy(other.gameObject);
+            }
+            life.reduceLife(projecile.getDamage()) ;
         }
     }
     private void Update()
