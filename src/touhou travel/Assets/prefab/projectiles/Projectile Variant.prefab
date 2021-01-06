@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!70 &1225915608812788115
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111007475749364342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.3, y: 0.1}
+  m_Direction: 1
 --- !u!1001 &7522371394423400083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,5 +79,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: EnemiProjectile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4965417856774608859, guid: d5c03065e1a4f1f4aaa6cc336dc0ffcd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d5c03065e1a4f1f4aaa6cc336dc0ffcd, type: 3}
+--- !u!1 &2111007475749364342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8443997447777584357, guid: d5c03065e1a4f1f4aaa6cc336dc0ffcd, type: 3}
+  m_PrefabInstance: {fileID: 7522371394423400083}
+  m_PrefabAsset: {fileID: 0}

@@ -12,6 +12,8 @@ TagManager:
   - ProjectilePlayer
   - EnemiProjectile
   - collectable
+  - bomb
+  - EnemyPattern
   layers:
   - Default
   - TransparentFX
