@@ -30,7 +30,9 @@ public class projectileManager : MonoBehaviour
         
         if(time >= 400)
         {
-            Destroy(this.gameObject);
+            
+                Destroy(this.gameObject);
+          
             time = 0;
         }
        

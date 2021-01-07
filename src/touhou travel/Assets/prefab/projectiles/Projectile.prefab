@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 982944606878859796}
   - component: {fileID: -4021537829586602248}
   - component: {fileID: 3819297929493854543}
-  - component: {fileID: -2029370861933637437}
+  - component: {fileID: 6525855936870512055}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: ProjectilePlayer
@@ -123,7 +123,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &-2029370861933637437
+--- !u!70 &6525855936870512055
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,5 +137,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.25, y: 0.0001}
-  m_Direction: 0
+  m_Size: {x: 0.3, y: 0.1}
+  m_Direction: 1

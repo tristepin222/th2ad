@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1682841791595055669}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: EnemyPattern
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,11 +49,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3767383882660111534, guid: 1bb150e9b2c3de5468802810997630b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.533606
+      value: -0.964
       objectReference: {fileID: 0}
     - target: {fileID: 3767383882660111534, guid: 1bb150e9b2c3de5468802810997630b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14256859
+      value: 0.098
       objectReference: {fileID: 0}
     - target: {fileID: 3767383882660111534, guid: 1bb150e9b2c3de5468802810997630b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -111,11 +111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3767383882660111534, guid: 1bb150e9b2c3de5468802810997630b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.41
+      value: 1.159606
       objectReference: {fileID: 0}
     - target: {fileID: 3767383882660111534, guid: 1bb150e9b2c3de5468802810997630b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.139
+      value: 0.09443098
       objectReference: {fileID: 0}
     - target: {fileID: 3767383882660111534, guid: 1bb150e9b2c3de5468802810997630b4, type: 3}
       propertyPath: m_LocalPosition.z

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7470595441878222537}
   m_Layer: 0
   m_Name: beam
-  m_TagString: Untagged
+  m_TagString: bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,8 +70,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9076157218784190130, guid: 786a5d46c510f6e4bb837030741b7bce, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.109688
+      objectReference: {fileID: 0}
+    - target: {fileID: 9076157218784190130, guid: 786a5d46c510f6e4bb837030741b7bce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.92
+      value: 4.446
       objectReference: {fileID: 0}
     - target: {fileID: 9076157218784190130, guid: 786a5d46c510f6e4bb837030741b7bce, type: 3}
       propertyPath: m_LocalPosition.y
