@@ -72,6 +72,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 4234271883398112242, guid: c15bd85736101f141a59c9c56804f2cf, type: 3}
   Enemy2: {fileID: 1300201617666197894, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
-  Enemy3: {fileID: 0}
+  Enemy3: {fileID: 3031103242059410649, guid: 1fb87b8895971a94eb3c37029bed80b1, type: 3}
   Enemy4: {fileID: 0}
   Enemy5: {fileID: 0}

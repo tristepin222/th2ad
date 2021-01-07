@@ -23,8 +23,9 @@ public class EnemiManagament : MonoBehaviour
     public int bulletAmount;
     private Vector3 target;
     private Vector3 difference;
+    private bool is_active = false;
     void Awake()
-    {
+  {        
         life = new LifeManagament(2);
         rand = new UnityEngine.Random();
         type = new Type { type = tType };
@@ -61,19 +62,22 @@ public class EnemiManagament : MonoBehaviour
             SpawnItemInWorld();
             player.GetLife().addLife(1);
         }
-        
-        if (cooldown >= cooldownMax)
-        {
-            target = player.transform.position;
-            difference = target - this.transform.position;
-            float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-            float distance = difference.magnitude;
+        if (is_active)
+        {
+            if (cooldown >= cooldownMax)
+            {
+                target = player.transform.position;
+                difference = target - this.transform.position;
+                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+                float distance = difference.magnitude;
                 Vector2 direction = difference / distance;
                 direction.Normalize();
-             LaunchProjectile(direction, rotationZ);
+                LaunchProjectile(direction, rotationZ);
 
-            cooldown = 0;
+                cooldown = 0;
+            }
         }
         
     }
@@ -104,7 +108,11 @@ public class EnemiManagament : MonoBehaviour
     }
     private void OnBecameInvisible()
     {
-        this.gameObject.SetActive(false);
+        is_active = false;
+    }   
+    private void OnBecameVisible()
+    {
+        is_active = true;
     }
     public void SpawnItemInWorld()
     {

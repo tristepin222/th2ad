@@ -9,25 +9,21 @@ public class SpawnEnemyManagement : MonoBehaviour
     [SerializeField] GameObject Enemy3;
     [SerializeField] GameObject Enemy4;
     [SerializeField] GameObject Enemy5;
+    private bool once = true;
     private List<GameObject> enemies = new List<GameObject>();
-    private void Awake()
-    {
-        enemies.Add(Enemy);
-        enemies.Add(Enemy2);
-        enemies.Add(Enemy3);
-        enemies.Add(Enemy4);
-        enemies.Add(Enemy5);
-
-    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if (once)
         {
-            
-                    
-                    StartCoroutine(_wait(5));
-            
-            
+            if (other.tag == "Player")
+            {
+
+
+                StartCoroutine(_wait(5));
+
+                once = false;
+            }
         }
     }
     private void SpawnEnemy(GameObject enemy)
