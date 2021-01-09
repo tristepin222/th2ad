@@ -8,6 +8,7 @@ public class EnemiManagament : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
     [SerializeField] public float bulletSpeed;
+    [SerializeField] public int health;
     [SerializeField] public TypeScriptable tType;
     [SerializeField] public GameObject loot;
     public PlayerManagament player;
@@ -26,7 +27,7 @@ public class EnemiManagament : MonoBehaviour
     private bool is_active = false;
     void Awake()
   {        
-        life = new LifeManagament(2);
+        life = new LifeManagament(health);
         rand = new UnityEngine.Random();
         type = new Type { type = tType };
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");

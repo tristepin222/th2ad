@@ -23,6 +23,7 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -33,10 +34,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -85,31 +84,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 602}
     - Class: 114
-      Script: {instanceID: 11822}
+      Script: {instanceID: 11796}
     - Class: 114
-      Script: {instanceID: 11976}
+      Script: {instanceID: 11798}
     - Class: 114
-      Script: {instanceID: 12014}
+      Script: {instanceID: 11826}
     - Class: 114
-      Script: {instanceID: 12158}
+      Script: {instanceID: 11980}
     - Class: 114
-      Script: {instanceID: 12224}
+      Script: {instanceID: 12018}
     - Class: 114
-      Script: {instanceID: 12466}
+      Script: {instanceID: 12226}
     - Class: 114
-      Script: {instanceID: 12788}
+      Script: {instanceID: 12468}
     - Class: 114
-      Script: {instanceID: 12884}
+      Script: {instanceID: 12790}
     - Class: 114
-      Script: {instanceID: 12988}
+      Script: {instanceID: 12886}
     - Class: 114
-      Script: {instanceID: 13078}
+      Script: {instanceID: 12990}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 13080}
     - Class: 114
-      Script: {instanceID: 13656}
+      Script: {instanceID: 13334}
     - Class: 114
-      Script: {instanceID: 13846}
+      Script: {instanceID: 13658}
     - Class: 114
       Script: {instanceID: 14052}
     - Class: 114
@@ -161,6 +160,18 @@ ScriptsOnlyBuild:
     - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -245,12 +256,6 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: GroupWeightManipulator
-  - hash:
-      serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
   - hash:
       serializedVersion: 2
       Hash: fd8b23ad3c9e81bc85b197495bc510ac
@@ -607,12 +612,6 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
-  - hash:
-      serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -841,7 +840,7 @@ ScriptsOnlyBuild:
     className: ProjectileScriptableObject
   - hash:
       serializedVersion: 2
-      Hash: c26b216cd49b7fc33d1d96b1057f6348
+      Hash: fdc2ee876469d91e822afaef8f0cb75f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnEnemyManagement
@@ -985,7 +984,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: f38e4a573093abe66161316ac873ff9c
+      Hash: fb4a7c0122e81569936e3429ada7f8bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemiManagament

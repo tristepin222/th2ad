@@ -52,6 +52,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 5045886479623814612, guid: f1827bc0a1b607744a2526b40d363704, type: 3}

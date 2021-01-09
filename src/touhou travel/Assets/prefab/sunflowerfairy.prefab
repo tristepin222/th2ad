@@ -96,7 +96,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2111007475749364342, guid: 3f6d7f56094c0ff48a99ad70a30a0b50, type: 3}
   bulletSpeed: 2
+  health: 2
   tType: {fileID: 11400000, guid: 59755c1e50e479a479722bd1ce75da76, type: 2}
   loot: {fileID: 5244307197535281814, guid: a9973c31cb0e14e44a34343b9c3bedee, type: 3}
   player: {fileID: 0}
@@ -142,7 +143,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!114 &3912212534297034992
 MonoBehaviour:
   m_ObjectHideFlags: 0

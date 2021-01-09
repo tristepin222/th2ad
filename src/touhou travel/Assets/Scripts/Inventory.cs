@@ -29,7 +29,7 @@ public class Inventory
     {
           bool found = false;
 
-        if (itemList.Count > MAXSLOTS)
+        if (itemList.Count >= MAXSLOTS)
         {
 
             throw new InventoryFullException();

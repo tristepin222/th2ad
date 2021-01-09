@@ -18,15 +18,15 @@ public class colliderManagement : MonoBehaviour
     [SerializeField] private Collider2D collider2DC;
     private Inventory selfIventory;
     private KeyCode e = KeyCode.E;
-    private Canvas Interact;
+    private GameObject Interact;
     private Item item;
-  
+    private bool entered;
 
 
     private void Awake()
     {
         
-        canva.SetActive(false);
+        
         
     }
 
@@ -34,7 +34,8 @@ public class colliderManagement : MonoBehaviour
     {
         
         textException.gameObject.SetActive(false);
-        Interact = Canvas.FindObjectOfType<Canvas>();
+        Interact = GameObject.FindGameObjectWithTag("Interact");
+        Interact.SetActive(false);
         selfIventory = new Inventory();
 
         if (!invert)
@@ -53,16 +54,21 @@ public class colliderManagement : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
-        
-      canva.SetActive(true);
-        
+        if (other.tag == "Player")
+        {
+            entered = true;
+            Interact.SetActive(true);
+        }
 
 
     }
     
     private void OnTriggerExit2D(Collider2D other) {
-     canva.SetActive(false);
-        
+        if (other.tag == "Player")
+        {
+            entered = false;
+            Interact.SetActive(false);
+        }
     }
 
    
@@ -70,7 +76,7 @@ public class colliderManagement : MonoBehaviour
     private void Update()
     {
        
-        if (Input.GetKeyDown(e) && Interact.enabled == true)
+        if (Input.GetKeyDown(e) && entered)
         {
             try
             {

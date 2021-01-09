@@ -72,7 +72,7 @@ public class DanmakuManagaer : MonoBehaviour
         {
             Rigidbody2D c = b.transform.GetChild(i).GetComponent<Rigidbody2D>();
 
-            c.velocity = c.transform.right;
+            c.velocity = c.transform.right*bulletSpeed;
 
 
         }

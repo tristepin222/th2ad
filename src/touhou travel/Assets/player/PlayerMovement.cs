@@ -45,13 +45,14 @@ public class PlayerMovement : MonoBehaviour
         // movement 
         if (Input.GetKey(shift))
         {
+            
             speed = 0.5f;
-            cc2.size = new Vector2(0.01f, 0.014f);
+            cc2.size = new Vector2(0.1f, 0.1f);
         }
         else
         {
             speed = 1f;
-            cc2.size = new Vector2(0.05f, 0.07f);
+            cc2.size = new Vector2(0.4f, 0.5f);
         }
         if(movement.y < 0  )
         {
