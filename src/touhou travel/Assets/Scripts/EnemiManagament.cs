@@ -11,7 +11,8 @@ public class EnemiManagament : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] public TypeScriptable tType;
     [SerializeField] public GameObject loot;
-    public PlayerManagament player;
+    [SerializeField] AudioSource  audio;
+    [SerializeField]  public PlayerManagament player;
     private LifeManagament life;
     public EventHandler hit;
     public Type type;
@@ -25,6 +26,7 @@ public class EnemiManagament : MonoBehaviour
     private Vector3 target;
     private Vector3 difference;
     private bool is_active = false;
+    private Renderer renderer;
     void Awake()
   {        
         life = new LifeManagament(health);
@@ -33,6 +35,9 @@ public class EnemiManagament : MonoBehaviour
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
        player = GPlayer.GetComponent<PlayerManagament>();
         life.isPLayer = false;
+         renderer = this.gameObject.GetComponent<Renderer>();
+        player.OnDeath += OnPlayerDeath;
+      
     }
 
     public void OnHit()
@@ -55,17 +60,21 @@ public class EnemiManagament : MonoBehaviour
     }
     private void Update()
     {
+      
+
         
 
         if (life.lifeAmount <= 0)
         {
             Destroy(this.gameObject);
+            audio.Stop();
             SpawnItemInWorld();
             player.GetLife().addLife(1);
         }
 
         if (is_active)
         {
+            
             if (cooldown >= cooldownMax)
             {
                 target = player.transform.position;
@@ -81,11 +90,25 @@ public class EnemiManagament : MonoBehaviour
             }
         }
         
+        
     }
     private void FixedUpdate()
     {
         cooldown++;
         cooldownDanmaku++;
+    }
+    private void OnBecameInvisible()
+    {
+        is_active = false;
+        audio.Pause();
+    }
+    private void OnBecameVisible()
+    {
+        is_active = true;
+        if (!audio.isPlaying)
+        {
+            audio.UnPause();
+        }
     }
     private void randomDrop()
     {
@@ -107,17 +130,16 @@ public class EnemiManagament : MonoBehaviour
        b.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
         b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
     }
-    private void OnBecameInvisible()
-    {
-        is_active = false;
-    }   
-    private void OnBecameVisible()
-    {
-        is_active = true;
-    }
+      
+    
     public void SpawnItemInWorld()
     {
         loot = Instantiate(loot) as GameObject;
         loot.transform.position = this.transform.position;
     }
+    private void OnPlayerDeath(object sender, System.EventArgs e)
+    {
+        audio.Pause();
+    }
+   
 }

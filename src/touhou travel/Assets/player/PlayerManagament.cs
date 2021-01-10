@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 public class PlayerManagament : MonoBehaviour
 {
- 
+    public event EventHandler OnDeath;
     [SerializeField] private UI_Inventory uiInventory;
     private Vector2 selfTransform;
     [SerializeField] private UI_Life uiLife;
@@ -82,11 +83,12 @@ private LifeManagament life;
         
             if (life.lifeAmount <= 0)
             {
-
-                UIGameOver.SetActive(true);
+            
+            UIGameOver.SetActive(true);
                 this.player.SetActive(false);
                 canva.SetActive(true);
-            }
+            OnDeath.Invoke(this, EventArgs.Empty);
+        }
        
         if (Input.GetKeyDown(xKey))
         {

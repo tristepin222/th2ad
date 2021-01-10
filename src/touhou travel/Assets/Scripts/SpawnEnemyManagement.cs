@@ -6,6 +6,7 @@ public class SpawnEnemyManagement : MonoBehaviour
 {
     [SerializeField] GameObject Enemy;
     [SerializeField] bool fixedSpawn;
+   
     [SerializeField] GameObject Enemy2;
     [SerializeField] bool fixedSpawn2;
     [SerializeField] GameObject Enemy3;
@@ -52,6 +53,7 @@ public class SpawnEnemyManagement : MonoBehaviour
 
     private IEnumerator _wait(float time)
     {        SpawnEnemy(Enemy, fixedSpawn);
+        
         yield return new WaitForSeconds(time);
         SpawnEnemy(Enemy2, fixedSpawn2);
         yield return new WaitForSeconds(time);

@@ -15,6 +15,7 @@ public class DanmakuManagaer : MonoBehaviour
     private Vector3 difference;
     private int cooldownDanmaku = 0;
     private int cooldownDanmaku2 = 0;
+    private bool is_active = false;
     void Start()
     {
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -24,39 +25,42 @@ public class DanmakuManagaer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (projectile != null)
+        if (is_active)
         {
-
-            if (cooldownDanmaku >= cooldownDanmakuMax)
+            if (projectile != null)
             {
-                target = player.transform.position;
-                difference = target - this.transform.position;
 
-                difference.Normalize();
-                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-                float distance = difference.magnitude;
-                Vector2 direction = difference / distance;
-                direction.Normalize();
-                LaunchProjectile(direction, rotationZ, projectile);
+                if (cooldownDanmaku >= cooldownDanmakuMax)
+                {
+                    target = player.transform.position;
+                    difference = target - this.transform.position;
 
-                cooldownDanmaku = 0;
+                    difference.Normalize();
+                    float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                    float distance = difference.magnitude;
+                    Vector2 direction = difference / distance;
+                    direction.Normalize();
+                    LaunchProjectile(direction, rotationZ, projectile);
+
+                    cooldownDanmaku = 0;
+                }
             }
-        }
-        if (projectile2 != null)
-        {
-            if (cooldownDanmaku2 >= cooldownDanmakuMax2)
+            if (projectile2 != null)
             {
-                target = player.transform.position;
-                difference = target - this.transform.position;
+                if (cooldownDanmaku2 >= cooldownDanmakuMax2)
+                {
+                    target = player.transform.position;
+                    difference = target - this.transform.position;
 
-                difference.Normalize();
-                float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-                float distance = difference.magnitude;
-                Vector2 direction = difference / distance;
-                direction.Normalize();
-                LaunchProjectile(direction, rotationZ, projectile2);
+                    difference.Normalize();
+                    float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                    float distance = difference.magnitude;
+                    Vector2 direction = difference / distance;
+                    direction.Normalize();
+                    LaunchProjectile(direction, rotationZ, projectile2);
 
-                cooldownDanmaku2 = 0;
+                    cooldownDanmaku2 = 0;
+                }
             }
         }
     }
@@ -77,6 +81,16 @@ public class DanmakuManagaer : MonoBehaviour
 
         }
         
+    }
+    private void OnBecameInvisible()
+    {
+        is_active = false;
+        
+    }
+    private void OnBecameVisible()
+    {
+        is_active = true;
+       
     }
     private void FixedUpdate()
     {

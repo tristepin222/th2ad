@@ -75,6 +75,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -138,6 +142,8 @@ ScriptsOnlyBuild:
     - Class: 128
       Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 169
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
@@ -984,7 +990,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: fb4a7c0122e81569936e3429ada7f8bc
+      Hash: f2442d2075dc5e11c3d7f4e86651f7e2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemiManagament
