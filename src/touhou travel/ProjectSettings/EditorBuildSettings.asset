@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f720b4dd11ac32740b05d42ed5dcb16a
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Buildings/Cirno_Igloo.unity
+    guid: 0806d8e299a414444a6d974e3609d984
   m_configObjects: {}

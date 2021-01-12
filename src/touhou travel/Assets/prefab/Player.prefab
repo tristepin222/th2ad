@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 5669077322590722065}
   - component: {fileID: 5669077322590722069}
   - component: {fileID: 5669077322590722070}
+  - component: {fileID: -3515307580078724697}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -240,7 +241,6 @@ MonoBehaviour:
   amount: 1
   projectile: {fileID: 8443997447777584357, guid: d5c03065e1a4f1f4aaa6cc336dc0ffcd, type: 3}
   bomb: {fileID: 4140902588373831117, guid: aeb12b17834caee46a07cc4bbf99404e, type: 3}
-  UIGameOver: {fileID: 0}
   cooldownMax: 60
   typeName: Vampire
   collider2DC: {fileID: 5669077322590722071}
@@ -249,6 +249,7 @@ MonoBehaviour:
   bulletSpeed: 10
   player: {fileID: 5669077322590722076}
   bulletAmount: 3
+  vc: {fileID: 0}
 --- !u!95 &5669077322590722070
 Animator:
   serializedVersion: 3
@@ -268,3 +269,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-3515307580078724697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669077322590722076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 420e733ea4961ba47907b7c3d6a2aab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  v: {x: 0, y: 0, z: 0}

@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
+using Cinemachine;
 public class PlayerManagament : MonoBehaviour
 {
     public event EventHandler OnDeath;
-    [SerializeField] private UI_Inventory uiInventory;
+    [SerializeField] public UI_Inventory uiInventory;
     private Vector2 selfTransform;
-    [SerializeField] private UI_Life uiLife;
+    [SerializeField] public UI_Life uiLife;
     [SerializeField] ProjectileScriptableObject projectileScriptableObject;
     [SerializeField] int amount;
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject bomb;
-    [SerializeField] GameObject UIGameOver;
-    private static Inventory inventory;
+    
+    public  Inventory inventory;
     [SerializeField] int cooldownMax;
     [SerializeField] string typeName;
  [SerializeField] private  Collider2D collider2DC;
     [SerializeField] TypeScriptable tType;
     private Type type;
-private LifeManagament life;
-    private GameObject canva;
+    public LifeManagament life;
+    
     private ProjectileManagament projectileManagament;
     [SerializeField] GameObject projectilePreFab;
     [SerializeField] public float bulletSpeed;
@@ -31,6 +33,8 @@ private LifeManagament life;
     private KeyCode xKey = KeyCode.X;
     [SerializeField] public GameObject player;
     [SerializeField] int bulletAmount;
+    [SerializeField] CinemachineVirtualCamera vc;
+
     private  void Awake() {
       type = new Type { type = tType };
         inventory = new Inventory();
@@ -51,9 +55,10 @@ private LifeManagament life;
     }
     void Start()
     {
-        canva = GameObject.FindGameObjectWithTag("MainMenu");
-         
+
+       
         
+
     }
     void Update()
     {
@@ -63,8 +68,8 @@ private LifeManagament life;
         
         if (Input.GetKeyDown(esc))
         {
-            
-            canva.SetActive(true);
+
+            SceneManager.LoadScene("MainMenu");
         }
         if (Input.GetMouseButton(0))
         {
@@ -83,10 +88,13 @@ private LifeManagament life;
         
             if (life.lifeAmount <= 0)
             {
-            
-            UIGameOver.SetActive(true);
-                this.player.SetActive(false);
-                canva.SetActive(true);
+
+
+
+            player.transform.position = new Vector3(0, 0, 0);
+           
+            setLife();
+            SceneManager.LoadScene("MainMenu");
             OnDeath.Invoke(this, EventArgs.Empty);
         }
        
@@ -158,7 +166,7 @@ private LifeManagament life;
     {
         life = new LifeManagament(3);
         uiLife.setLifeUI(life);
-        UIGameOver.SetActive(false);
+       
     }
 }
 

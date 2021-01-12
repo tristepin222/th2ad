@@ -16,6 +16,7 @@ TagManager:
   - EnemyPattern
   - FullException
   - SpawnAnchor
+  - vc
   layers:
   - Default
   - TransparentFX

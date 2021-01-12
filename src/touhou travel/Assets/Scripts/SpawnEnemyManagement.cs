@@ -30,7 +30,7 @@ public class SpawnEnemyManagement : MonoBehaviour
             if (other.tag == "Player")
             {
 
-
+                DontDestroyOnLoad(this);
                 StartCoroutine(_wait(5));
 
                 once = false;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -9,13 +10,12 @@ public class Menu : MonoBehaviour
     GameObject canva;
     CinemachineVirtualCamera cm;
     GameObject player;
-    [SerializeField] PlayerManagament playerM;
+    
   
     private void Awake()
     {
         canva = GameObject.FindGameObjectWithTag("MainMenu");
-        cm = CinemachineVirtualCamera.FindObjectOfType<CinemachineVirtualCamera>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        
     }
     public void ExitGame()
     {
@@ -23,12 +23,11 @@ public class Menu : MonoBehaviour
     }
     public void Play()
     {
-      
-        player.SetActive(true);
-        cm.Follow = player.transform;
-       canva.SetActive(false);
-        player.transform.position = new Vector2(0, 0);
-        playerM.setLife();
+
+
+
+        SceneManager.LoadScene("Game");
+       
        
     }
     
