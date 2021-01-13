@@ -13,6 +13,9 @@ public class GlobalControl : MonoBehaviour
     public GameObject ui_life;
     public GameObject ui_inventory;
     public GameObject vc;
+    public GameObject player;
+
+    public Vector3 v3;
 
     void Awake()
     {
@@ -22,6 +25,7 @@ public class GlobalControl : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(ui_life);
             DontDestroyOnLoad(ui_inventory);
+            
             Instance = this;
         }
         else if (Instance != this)
@@ -30,6 +34,7 @@ public class GlobalControl : MonoBehaviour
             Destroy(vc);
             Destroy(ui_life);
             Destroy(ui_inventory);
+           
         }
     }
 }
