@@ -13,6 +13,8 @@ public class EnemiManagament : MonoBehaviour
     [SerializeField] public GameObject loot;
     [SerializeField] AudioSource  audio;
     [SerializeField]  public PlayerManagament player;
+    
+    [SerializeField] bool  isBoss;
     private LifeManagament life;
     public EventHandler hit;
     public Type type;
@@ -26,9 +28,27 @@ public class EnemiManagament : MonoBehaviour
     private Vector3 target;
     private Vector3 difference;
     private bool is_active = false;
+
     private Renderer renderer;
+    BoxCollider2D boxc;
     void Awake()
-  {        
+  {
+        if (this.transform.parent == null)
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(this.transform.parent.gameObject);
+        }
+
+        
+
+           
+        
+        
+
+        boxc = GameObject.FindGameObjectWithTag("cirno_Igloo").GetComponent<BoxCollider2D>();
         life = new LifeManagament(health);
         rand = new UnityEngine.Random();
         type = new Type { type = tType };
@@ -37,7 +57,10 @@ public class EnemiManagament : MonoBehaviour
         life.isPLayer = false;
          renderer = this.gameObject.GetComponent<Renderer>();
         player.OnDeath += OnPlayerDeath;
-      
+        if (isBoss)
+        {
+            boxc.enabled = false;
+        }
     }
 
     public void OnHit()
@@ -52,8 +75,9 @@ public class EnemiManagament : MonoBehaviour
             if (!projecile.isBeam)
             {
 
-
+                
                 Destroy(other.gameObject);
+
             }
             life.reduceLife(projecile.getDamage()) ;
         }
@@ -66,10 +90,18 @@ public class EnemiManagament : MonoBehaviour
 
         if (life.lifeAmount <= 0)
         {
+            
             Destroy(this.gameObject);
-            audio.Stop();
+            if (audio != null)
+            {
+                audio.Stop();
+            }
             SpawnItemInWorld();
             player.GetLife().addLife(1);
+            if (isBoss)
+            {
+                boxc.enabled = true;
+            }
         }
 
         if (is_active)

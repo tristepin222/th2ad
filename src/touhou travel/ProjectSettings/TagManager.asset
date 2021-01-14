@@ -17,6 +17,8 @@ TagManager:
   - FullException
   - SpawnAnchor
   - vc
+  - loadAnchor
+  - cirno_Igloo
   layers:
   - Default
   - TransparentFX

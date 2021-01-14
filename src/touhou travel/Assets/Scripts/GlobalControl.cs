@@ -14,6 +14,7 @@ public class GlobalControl : MonoBehaviour
     public GameObject ui_inventory;
     public GameObject vc;
     public GameObject player;
+    public List<bool> spawns;
 
     public Vector3 v3;
 

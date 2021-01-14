@@ -181,12 +181,24 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
+      propertyPath: isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
+      propertyPath: toDisable
+      value: 
+      objectReference: {fileID: 3443466300693170939, guid: f0436bcf1a4a7614f8330f6e4c4ebf28, type: 3}
+    - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 7886192556664224066, guid: 1647d96681a884d4f8fe337b8e509f37, type: 3}
     - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
       propertyPath: bulletSpeed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300201617666197891, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
+      propertyPath: m_Simulated
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1300201617666197894, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
       propertyPath: m_Name

@@ -23,6 +23,7 @@ public class loadScene : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+          
            SceneManager.LoadScene(scene);
            
         }

@@ -6,7 +6,7 @@ public class SpawnEnemyManagement : MonoBehaviour
 {
     [SerializeField] GameObject Enemy;
     [SerializeField] bool fixedSpawn;
-   
+    [SerializeField] int spawn;
     [SerializeField] GameObject Enemy2;
     [SerializeField] bool fixedSpawn2;
     [SerializeField] GameObject Enemy3;
@@ -25,17 +25,22 @@ public class SpawnEnemyManagement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (once)
+        GlobalControl.Instance.spawns.Add(false);
+        if (GlobalControl.Instance.spawns[spawn] != true)
         {
-            if (other.tag == "Player")
+            if (once)
             {
+                if (other.tag == "Player")
+                {
 
-                DontDestroyOnLoad(this);
-                StartCoroutine(_wait(5));
+                    
+                    StartCoroutine(_wait(5));
 
-                once = false;
+                    once = false;
+                }
             }
         }
+        GlobalControl.Instance.spawns[spawn] = true;
     }
     private void SpawnEnemy(GameObject enemy, bool fixedSpawn = false)
     {

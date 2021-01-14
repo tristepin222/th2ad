@@ -10,8 +10,7 @@ public class sceneManager : MonoBehaviour
 
     [SerializeField] GameObject vc;
     [SerializeField] Vector3 v;
-    [SerializeField] bool is_menu;
-    [SerializeField] bool inside;
+
 
 
 
@@ -21,9 +20,9 @@ public class sceneManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneUnloaded += OnUnloadScene;
-        
-      
-     
+        SceneManager.sceneLoaded += OnloadScene;
+
+
     }
 
     // Update is called once per frame
@@ -31,13 +30,24 @@ public class sceneManager : MonoBehaviour
     {
         
     }
+    private void OnloadScene(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        if (scene.name == "Game")
+        {
+            GlobalControl.Instance.player.transform.position = GlobalControl.Instance.v3;
+        }
+        
+    }
   private void  OnUnloadScene(Scene scene)
     {
       
         GlobalControl.Instance.life = player_managament.life;
-        
         GlobalControl.Instance.inventory = player_managament.inventory;
-        GlobalControl.Instance.vc = vc;
+        if (scene.name == "Game")
+        {
+            GlobalControl.Instance.v3 = player.transform.position - new Vector3(0,1,0);
+        }
+        
        
 
     }

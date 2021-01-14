@@ -6,23 +6,22 @@ using UnityEngine.SceneManagement;
 public class loader : MonoBehaviour
 {
     [SerializeField] public Transform transform;
-    [SerializeField] public bool isSpawn;
+   
     [SerializeField] public Vector3 v;
     private void Awake()
     {
         SceneManager.sceneLoaded += OnloadScene;
+       
     }
     private void OnloadScene(Scene scene, LoadSceneMode loadScene)
     {
-        Debug.Log(scene.name);
 
-        if (!isSpawn)
+
+        if (this != null)
         {
-            GlobalControl.Instance.player.transform.position = v;
-        }
-        else
-        {
-            isSpawn = false;
+            GlobalControl.Instance.player.transform.position = this.gameObject.transform.position;
+
         }
     }
+  
 }
