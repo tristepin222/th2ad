@@ -205,6 +205,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &52734540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2038595364345762000, guid: 1b595060908f67344983867e9325ebbd, type: 3}
+  m_PrefabInstance: {fileID: 2038595363680987607}
+  m_PrefabAsset: {fileID: 0}
 --- !u!213 &83314548
 Sprite:
   m_ObjectHideFlags: 0
@@ -41724,11 +41729,15 @@ PrefabInstance:
     - target: {fileID: -3515307580078724697, guid: 3f5a933f38c80f64eb1b62bb26c2b93f, type: 3}
       propertyPath: ui_life
       value: 
-      objectReference: {fileID: 1467966698}
+      objectReference: {fileID: 1679865283}
+    - target: {fileID: -3515307580078724697, guid: 3f5a933f38c80f64eb1b62bb26c2b93f, type: 3}
+      propertyPath: ui_interact
+      value: 
+      objectReference: {fileID: 52734540}
     - target: {fileID: -3515307580078724697, guid: 3f5a933f38c80f64eb1b62bb26c2b93f, type: 3}
       propertyPath: ui_inventory
       value: 
-      objectReference: {fileID: 1679865283}
+      objectReference: {fileID: 1467966698}
     - target: {fileID: 5669077322590722066, guid: 3f5a933f38c80f64eb1b62bb26c2b93f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -41914,6 +41923,10 @@ PrefabInstance:
     - target: {fileID: 6590274739028702303, guid: f68ee295e6c15e04c8cc3e9cf14b32a6, type: 3}
       propertyPath: m_SortingOrder
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590274739473350032, guid: f68ee295e6c15e04c8cc3e9cf14b32a6, type: 3}
+      propertyPath: m_TagString
+      value: FullException
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f68ee295e6c15e04c8cc3e9cf14b32a6, type: 3}

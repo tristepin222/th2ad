@@ -12,6 +12,7 @@ public class GlobalControl : MonoBehaviour
     public Inventory inventory;
     public GameObject ui_life;
     public GameObject ui_inventory;
+    public GameObject ui_interact;
     public GameObject vc;
     public GameObject player;
     public List<bool> spawns;
@@ -27,7 +28,7 @@ public class GlobalControl : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             DontDestroyOnLoad(ui_life);
             DontDestroyOnLoad(ui_inventory);
-            
+            DontDestroyOnLoad(ui_interact);
             Instance = this;
         }
         else if (Instance != this)
@@ -36,7 +37,7 @@ public class GlobalControl : MonoBehaviour
             Destroy(vc);
             Destroy(ui_life);
             Destroy(ui_inventory);
-           
+            Destroy(ui_interact);
         }
     }
 }

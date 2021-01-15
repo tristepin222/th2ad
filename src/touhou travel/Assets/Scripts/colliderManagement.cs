@@ -25,16 +25,49 @@ public class colliderManagement : MonoBehaviour
 
     private void Awake()
     {
-        
-        
-        
+        if (player == null)
+        {
+            player = GlobalControl.Instance.player.GetComponent<PlayerManagament>();
+        }
+        if (textException == null)
+        {
+            textException = GlobalControl.Instance.ui_inventory.transform.Find("FullException");
+        }
+        Interact = GameObject.FindGameObjectWithTag("Interact");
+        if (Interact == null)
+        {
+            Interact = GlobalControl.Instance.ui_interact;
+        }
+        Interact.SetActive(false);
+        selfIventory = new Inventory();
+
+        if (!invert)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.maxAmount, maxAmount = this.maxAmount, maxedOut = false };
+                selfIventory.AddInventory(item);
+            }
+
+        }
     }
 
     void Start()
     {
-        
+        if (player == null)
+        {
+            player = GlobalControl.Instance.player.GetComponent<PlayerManagament>();
+        }
+        if (textException == null)
+        {
+            textException = GlobalControl.Instance.ui_inventory.transform.Find("FullException");
+        }
         textException.gameObject.SetActive(false);
         Interact = GameObject.FindGameObjectWithTag("Interact");
+        if(Interact == null)
+        {
+            Interact = GlobalControl.Instance.ui_interact;
+        }
         Interact.SetActive(false);
         selfIventory = new Inventory();
 
