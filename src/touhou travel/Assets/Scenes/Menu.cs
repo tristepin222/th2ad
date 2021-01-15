@@ -26,7 +26,7 @@ public class Menu : MonoBehaviour
 
 
 
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(GlobalControl.Instance.lastScene);
        
        
     }

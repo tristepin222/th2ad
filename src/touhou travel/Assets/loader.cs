@@ -11,17 +11,29 @@ public class loader : MonoBehaviour
     private void Awake()
     {
         SceneManager.sceneLoaded += OnloadScene;
-       
+        SceneManager.sceneUnloaded += OnUnloadScene;
     }
     private void OnloadScene(Scene scene, LoadSceneMode loadScene)
     {
 
-
+        
         if (this != null)
         {
-            GlobalControl.Instance.player.transform.position = this.gameObject.transform.position;
+            if (GlobalControl.Instance.lastScene != "MainMenu")
+            {
+                GlobalControl.Instance.player.transform.position = this.gameObject.transform.position;
+            }
 
         }
+        
+
     }
-  
+    private void OnUnloadScene(Scene scene)
+    {
+
+
+        GlobalControl.Instance.lastScene = scene.name;
+        
+    }
+
 }

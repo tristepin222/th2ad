@@ -43,6 +43,7 @@ public class sceneManager : MonoBehaviour
       
         GlobalControl.Instance.life = player_managament.life;
         GlobalControl.Instance.inventory = player_managament.inventory;
+        GlobalControl.Instance.lastScene = scene.name;
         if (scene.name == "Game")
         {
             GlobalControl.Instance.v3 = player.transform.position - new Vector3(0,1,0);

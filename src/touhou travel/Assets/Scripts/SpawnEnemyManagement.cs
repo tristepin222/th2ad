@@ -17,30 +17,40 @@ public class SpawnEnemyManagement : MonoBehaviour
     [SerializeField] bool fixedSpawn5;
     private bool once = true;
     private List<GameObject> enemies = new List<GameObject>();
-    private GameObject anchor;
+    public GameObject anchor;
     private void Awake()
     {
-        anchor = GameObject.FindGameObjectWithTag("SpawnAnchor");
+       
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GlobalControl.Instance.spawns.Add(false);
-        if (GlobalControl.Instance.spawns[spawn] != true)
+        if (other.tag == "Player")
         {
+
+            
+
+                GlobalControl.Instance.spawns.Add(false);
+          
+            
+                Debug.Log(GlobalControl.Instance.spawns[spawn]);
             if (once)
             {
-                if (other.tag == "Player")
+                if (GlobalControl.Instance.spawns[spawn] != true)
                 {
 
-                    
-                    StartCoroutine(_wait(5));
+
+
+
+                    StartCoroutine(_wait(1));
 
                     once = false;
+
+
                 }
+                GlobalControl.Instance.spawns[spawn] = true;
             }
         }
-        GlobalControl.Instance.spawns[spawn] = true;
     }
     private void SpawnEnemy(GameObject enemy, bool fixedSpawn = false)
     {
@@ -57,15 +67,30 @@ public class SpawnEnemyManagement : MonoBehaviour
     }
 
     private IEnumerator _wait(float time)
-    {        SpawnEnemy(Enemy, fixedSpawn);
-        
+    {
+        if (Enemy != null)
+        {
+            SpawnEnemy(Enemy, fixedSpawn);
+        }
         yield return new WaitForSeconds(time);
-        SpawnEnemy(Enemy2, fixedSpawn2);
+        if (Enemy2 != null)
+        {
+            SpawnEnemy(Enemy2, fixedSpawn2);
+        }
         yield return new WaitForSeconds(time);
-        SpawnEnemy(Enemy3, fixedSpawn3);
+        if (Enemy3 != null)
+        {
+            SpawnEnemy(Enemy3, fixedSpawn3);
+        }
         yield return new WaitForSeconds(time);
-        SpawnEnemy(Enemy4, fixedSpawn4);
+        if (Enemy4 != null)
+        {
+            SpawnEnemy(Enemy4, fixedSpawn4);
+        }
         yield return new WaitForSeconds(time);
-        SpawnEnemy(Enemy5, fixedSpawn5);
+        if (Enemy5 != null)
+        {
+            SpawnEnemy(Enemy5, fixedSpawn5);
+        }
     }
 }

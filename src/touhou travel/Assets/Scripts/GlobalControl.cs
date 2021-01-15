@@ -15,6 +15,7 @@ public class GlobalControl : MonoBehaviour
     public GameObject vc;
     public GameObject player;
     public List<bool> spawns;
+    public string lastScene;
 
     public Vector3 v3;
 
