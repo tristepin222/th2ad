@@ -33,7 +33,7 @@ public class SpawnEnemyManagement : MonoBehaviour
                 GlobalControl.Instance.spawns.Add(false);
           
             
-                Debug.Log(GlobalControl.Instance.spawns[spawn]);
+               
             if (once)
             {
                 if (GlobalControl.Instance.spawns[spawn] != true)

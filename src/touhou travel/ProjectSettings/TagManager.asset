@@ -19,6 +19,7 @@ TagManager:
   - vc
   - loadAnchor
   - cirno_Igloo
+  - obstacle
   layers:
   - Default
   - TransparentFX

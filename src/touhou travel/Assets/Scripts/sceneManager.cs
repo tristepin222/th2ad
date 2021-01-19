@@ -35,6 +35,11 @@ public class sceneManager : MonoBehaviour
         if (scene.name == "Game")
         {
             GlobalControl.Instance.player.transform.position = GlobalControl.Instance.v3;
+            if(GlobalControl.Instance.spawns[1] == true)
+            {
+                GameObject o = GameObject.FindGameObjectWithTag("obstacle");
+                Destroy(o);
+            }
         }
         
     }

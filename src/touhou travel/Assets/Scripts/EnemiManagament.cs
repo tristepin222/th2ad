@@ -13,7 +13,8 @@ public class EnemiManagament : MonoBehaviour
     [SerializeField] public GameObject loot;
     [SerializeField] AudioSource  audio;
     [SerializeField]  public PlayerManagament player;
-    
+    [SerializeField] public string tag;
+    [SerializeField] public string tag2;
     [SerializeField] bool  isBoss;
     private LifeManagament life;
     public EventHandler hit;
@@ -30,7 +31,9 @@ public class EnemiManagament : MonoBehaviour
     private bool is_active = false;
 
     private Renderer renderer;
+
     BoxCollider2D boxc;
+    GameObject obstacle;
     void Awake()
   {
         if (this.transform.parent == null)
@@ -42,13 +45,19 @@ public class EnemiManagament : MonoBehaviour
             DontDestroyOnLoad(this.transform.parent.gameObject);
         }
 
-        
 
-           
-        
-        
 
-        boxc = GameObject.FindGameObjectWithTag("cirno_Igloo").GetComponent<BoxCollider2D>();
+
+
+
+        if (tag != "")
+        {
+            boxc = GameObject.FindGameObjectWithTag(tag).GetComponent<BoxCollider2D>();
+        }
+        if (tag2 != "")
+        {
+            obstacle = GameObject.FindGameObjectWithTag(tag2);
+        }
         life = new LifeManagament(health);
         rand = new UnityEngine.Random();
         type = new Type { type = tType };
@@ -101,6 +110,7 @@ public class EnemiManagament : MonoBehaviour
             if (isBoss)
             {
                 boxc.enabled = true;
+                Destroy(obstacle);
             }
         }
 

@@ -173,6 +173,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
+      propertyPath: tag
+      value: cirno_Igloo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
+      propertyPath: tag2
+      value: obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300201617666197890, guid: 008726bc109509d4fae470fdd05b1791, type: 3}
       propertyPath: audio
       value: 
       objectReference: {fileID: 4797210300783560176}

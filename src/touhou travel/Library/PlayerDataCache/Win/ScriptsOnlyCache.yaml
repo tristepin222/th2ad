@@ -15,6 +15,7 @@ ScriptsOnlyBuild:
     - UI_Life
     - colliderManagement
     - loadScene
+    - loader
     - lootManager
     - projectileManager
     - sceneManager
@@ -26,7 +27,10 @@ ScriptsOnlyBuild:
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
@@ -63,43 +67,37 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 50
-      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
-    - Class: 70
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 602}
     - Class: 114
-      Script: {instanceID: 12790}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 12886}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 13394}
+      Script: {instanceID: 12354}
     - Class: 114
-      Script: {instanceID: 14056}
+      Script: {instanceID: 12528}
     - Class: 114
-      Script: {instanceID: 14456}
+      Script: {instanceID: 13050}
     - Class: 114
-      Script: {instanceID: 14918}
+      Script: {instanceID: 14518}
     - Class: 114
-      Script: {instanceID: 15226}
+      Script: {instanceID: 14836}
     - Class: 114
-      Script: {instanceID: 15266}
+      Script: {instanceID: 15080}
     - Class: 114
-      Script: {instanceID: 15404}
+      Script: {instanceID: 15466}
+    - Class: 114
+      Script: {instanceID: 15524}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -108,6 +106,12 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 19719996
       Script: {instanceID: 0}
@@ -155,57 +159,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 602}
     - Class: 114
-      Script: {instanceID: 11796}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 11826}
+      Script: {instanceID: 12036}
     - Class: 114
-      Script: {instanceID: 11980}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 12284}
     - Class: 114
-      Script: {instanceID: 12468}
+      Script: {instanceID: 12528}
     - Class: 114
-      Script: {instanceID: 12790}
+      Script: {instanceID: 12850}
     - Class: 114
-      Script: {instanceID: 12886}
+      Script: {instanceID: 12946}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 13050}
     - Class: 114
-      Script: {instanceID: 13080}
-    - Class: 114
-      Script: {instanceID: 13334}
+      Script: {instanceID: 13140}
     - Class: 114
       Script: {instanceID: 13394}
     - Class: 114
-      Script: {instanceID: 13662}
+      Script: {instanceID: 13454}
     - Class: 114
-      Script: {instanceID: 14056}
+      Script: {instanceID: 13722}
     - Class: 114
-      Script: {instanceID: 14252}
+      Script: {instanceID: 14118}
     - Class: 114
-      Script: {instanceID: 14368}
+      Script: {instanceID: 14314}
     - Class: 114
-      Script: {instanceID: 14456}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 14774}
+      Script: {instanceID: 14518}
     - Class: 114
-      Script: {instanceID: 14918}
+      Script: {instanceID: 14836}
     - Class: 114
-      Script: {instanceID: 14952}
+      Script: {instanceID: 14980}
     - Class: 114
-      Script: {instanceID: 15018}
+      Script: {instanceID: 15014}
     - Class: 114
-      Script: {instanceID: 15072}
+      Script: {instanceID: 15080}
     - Class: 114
-      Script: {instanceID: 15226}
+      Script: {instanceID: 15134}
     - Class: 114
-      Script: {instanceID: 15266}
+      Script: {instanceID: 15288}
     - Class: 114
-      Script: {instanceID: 15404}
+      Script: {instanceID: 15328}
     - Class: 114
-      Script: {instanceID: 15462}
+      Script: {instanceID: 15466}
     - Class: 114
-      Script: {instanceID: 15490}
+      Script: {instanceID: 15524}
+    - Class: 114
+      Script: {instanceID: 15552}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -252,21 +256,21 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11796}
+      Script: {instanceID: 11882}
     - Class: 114
-      Script: {instanceID: 11798}
+      Script: {instanceID: 12074}
     - Class: 114
-      Script: {instanceID: 11826}
+      Script: {instanceID: 12218}
     - Class: 114
-      Script: {instanceID: 12018}
+      Script: {instanceID: 12284}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 13050}
     - Class: 114
-      Script: {instanceID: 12990}
+      Script: {instanceID: 13912}
     - Class: 114
-      Script: {instanceID: 14774}
+      Script: {instanceID: 14836}
     - Class: 114
-      Script: {instanceID: 15462}
+      Script: {instanceID: 15524}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -284,18 +288,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 699619b86d9359741a4f58540298c80b
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Text
-  - hash:
-      serializedVersion: 2
-      Hash: f087c23fbfa15475a0d110af46fb0496
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -382,6 +374,12 @@ ScriptsOnlyBuild:
     className: GroupWeightManipulator
   - hash:
       serializedVersion: 2
+      Hash: 699619b86d9359741a4f58540298c80b
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Text
+  - hash:
+      serializedVersion: 2
       Hash: fd8b23ad3c9e81bc85b197495bc510ac
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -434,6 +432,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_InputField
+  - hash:
+      serializedVersion: 2
+      Hash: a28d6493ee2cc3d357b1cbfb5b861698
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: loader
   - hash:
       serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
@@ -664,7 +668,7 @@ ScriptsOnlyBuild:
     className: CinemachineOrbitalTransposer
   - hash:
       serializedVersion: 2
-      Hash: 0cfbabe284dbf3b7a312ed230a969f85
+      Hash: 86384081150a76384f4c9f9bc133f745
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: sceneManager
@@ -746,6 +750,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: f087c23fbfa15475a0d110af46fb0496
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: c1d728126ff1918728036c59106d32b2
@@ -982,7 +992,7 @@ ScriptsOnlyBuild:
     className: ProjectileScriptableObject
   - hash:
       serializedVersion: 2
-      Hash: fdc2ee876469d91e822afaef8f0cb75f
+      Hash: f5cda7b1703af903f81a9b87c3fa5440
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpawnEnemyManagement
@@ -1024,7 +1034,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: d5210058162e8a63d3d62077c360a157
+      Hash: 81a0b45de6cc4793fb6ead61480f4a8c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GlobalControl
@@ -1132,7 +1142,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: f2442d2075dc5e11c3d7f4e86651f7e2
+      Hash: 05ca99a4bac96be2ebbfb53a33673453
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemiManagament
