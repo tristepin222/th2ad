@@ -240,9 +240,41 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 114, y: -80}
+        - {x: 112, y: -78}
+        - {x: 110, y: -78}
+        - {x: 110, y: -50}
+        - {x: 112, y: -50}
+        - {x: 114, y: -48}
+        - {x: 114, y: -28}
+        - {x: 112, y: -26}
+        - {x: 110, y: -26}
+        - {x: 110, y: -18}
+        - {x: 112, y: -18}
+        - {x: 114, y: -16}
+        - {x: 114, y: 10}
+        - {x: 116, y: 10}
+        - {x: 118, y: 12}
+        - {x: 118, y: 22}
+        - {x: 120, y: 22}
+        - {x: 122, y: 24}
+        - {x: 122, y: 46}
+        - {x: 124, y: 46}
+        - {x: 126, y: 48}
+        - {x: 126, y: 78}
+        - {x: 128, y: 78}
+        - {x: 128, y: 118}
+        - {x: 126, y: 118}
+        - {x: 126, y: 128}
+        - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 118, y: -128}
+        - {x: 118, y: -84}
+        - {x: 116, y: -82}
+        - {x: 114, y: -82}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 0.82
       bones: []
       spriteID: 8760d375f7bf00830800000000000000
       internalID: 4035501790466999928
@@ -296,7 +328,7 @@ TextureImporter:
       name: tilemap_6
       rect:
         serializedVersion: 2
-        x: 555
+        x: 556
         y: 1397
         width: 256
         height: 256

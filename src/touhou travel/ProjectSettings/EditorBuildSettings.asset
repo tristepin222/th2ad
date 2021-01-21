@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Buildings/Cirno_Igloo.unity
     guid: 0806d8e299a414444a6d974e3609d984
+  - enabled: 1
+    path: Assets/Scenes/stage1.unity
+    guid: cb7da48873725b14486605980a6a3715
   m_configObjects: {}

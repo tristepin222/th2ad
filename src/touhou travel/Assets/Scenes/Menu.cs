@@ -23,10 +23,16 @@ public class Menu : MonoBehaviour
     }
     public void Play()
     {
+        if(GlobalControl.Instance != null)
+        {
+            SceneManager.LoadScene(GlobalControl.Instance.lastScene);
+        }
+        else{
+            SceneManager.LoadScene("Game");
+        }
 
 
-
-        SceneManager.LoadScene(GlobalControl.Instance.lastScene);
+        
        
        
     }
