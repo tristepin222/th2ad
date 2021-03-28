@@ -281,4 +281,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 420e733ea4961ba47907b7c3d6a2aab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  v: {x: 0, y: 0, z: 0}
+  v: {fileID: 0}
+  ui_life: {fileID: 0}
+  ui_inventory: {fileID: 0}
+  ui_interact: {fileID: 0}
+  vc: {fileID: 0}
+  player: {fileID: 0}
+  spawns: 
+  lastScene: 
+  v3: {x: 0, y: 0, z: 0}

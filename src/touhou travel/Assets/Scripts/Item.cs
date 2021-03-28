@@ -12,6 +12,7 @@ public class Item
         Coin,
         Wood,
         Rock,
+        Hoe,
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class Item
             case ItemType.Coin : return "Coin";
             case ItemType.Wood : return "Wood";
             case ItemType.Rock : return "Rock";
+            case ItemType.Hoe: return "Hoe";
         }
         
     }

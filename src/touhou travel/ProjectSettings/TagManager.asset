@@ -20,6 +20,7 @@ TagManager:
   - loadAnchor
   - cirno_Igloo
   - obstacle
+  - growableLand
   layers:
   - Default
   - TransparentFX

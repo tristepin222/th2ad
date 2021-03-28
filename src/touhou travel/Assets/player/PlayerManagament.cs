@@ -164,7 +164,9 @@ public class PlayerManagament : MonoBehaviour
             inventory.AddInventory(loot.GetItem());
             Destroy(otherB);
         }
+       
     }
+    
     public void setLife()
     {
         life = new LifeManagament(3);

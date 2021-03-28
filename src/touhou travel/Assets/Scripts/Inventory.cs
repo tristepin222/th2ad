@@ -8,7 +8,7 @@ public class Inventory
 
     public event EventHandler OnItemListChanged;
     private List<Item> itemList;
-
+    private bool has_item = false;
     public bool empty;
     private const int MAXSLOTS = 6;
 
@@ -121,6 +121,23 @@ public class Inventory
     public List<Item> getItemList()
     {
         return itemList;
+    }
+    public bool hasItem(string nameItemNeeded)
+    {
+        foreach(Item item in itemList)
+        {
+            string name = item.GetString();
+            if(name == nameItemNeeded)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return false;
     }
     public override string ToString()
     {

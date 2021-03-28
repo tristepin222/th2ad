@@ -19,7 +19,7 @@ public class EnemiManagament : MonoBehaviour
     private LifeManagament life;
     public EventHandler hit;
     public Type type;
-    UnityEngine.Random rand;
+
    public Item item;
     private int cooldown = 0;
     private int cooldownDanmaku = 0;
@@ -59,7 +59,7 @@ public class EnemiManagament : MonoBehaviour
             obstacle = GameObject.FindGameObjectWithTag(tag2);
         }
         life = new LifeManagament(health);
-        rand = new UnityEngine.Random();
+        
         type = new Type { type = tType };
         GameObject GPlayer = GameObject.FindGameObjectWithTag("Player");
        player = GPlayer.GetComponent<PlayerManagament>();

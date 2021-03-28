@@ -15,6 +15,8 @@ public class colliderManagement : MonoBehaviour
     [SerializeField] private ItemScriptableObject itemScriptableObject;
     [SerializeField] private int amount;
     [SerializeField] private int maxAmount;
+    [SerializeField] private int amountToAdd;
+    [SerializeField] private bool deleteWhenEmpty;
     [SerializeField] private Collider2D collider2DC;
     private Inventory selfIventory;
     private KeyCode e = KeyCode.E;
@@ -41,15 +43,7 @@ public class colliderManagement : MonoBehaviour
         Interact.SetActive(false);
         selfIventory = new Inventory();
 
-        if (!invert)
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.maxAmount, maxAmount = this.maxAmount, maxedOut = false };
-                selfIventory.AddInventory(item);
-            }
-
-        }
+        
     }
 
     void Start()
@@ -73,9 +67,9 @@ public class colliderManagement : MonoBehaviour
 
         if (!invert)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < amountToAdd; i++)
             {
-                item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.maxAmount, maxAmount = this.maxAmount, maxedOut = false };
+                item = new Item { itemScriptableObject = this.itemScriptableObject, item = itemScriptableObject.itemType, amount = this.maxAmount, maxAmount = this.maxAmount, maxedOut = false };
                 selfIventory.AddInventory(item);
             }
             
@@ -122,7 +116,7 @@ public class colliderManagement : MonoBehaviour
                 else
                 {
                    
-                    item = new Item { itemScriptableObject = this.itemScriptableObject, amount = this.amount, maxAmount = this.maxAmount, maxedOut = false };
+                    item = new Item { itemScriptableObject = this.itemScriptableObject, item = itemScriptableObject.itemType, amount = this.amount, maxAmount = this.maxAmount, maxedOut = false };
                     textException.gameObject.SetActive(false);
                     if(player.GetCollider2D().IsTouching(collider2DC)){
                  if(this.invert){
@@ -131,10 +125,16 @@ public class colliderManagement : MonoBehaviour
                     selfIventory.AddInventory(item);
                     this.invert = true;
                     }else{
-                    
-                    selfIventory.RemoveInventory(item);
-                    player.GetInventory().AddInventory(item);
-                    this.invert = false;
+                            if (selfIventory.empty != true)
+                            {
+                                selfIventory.RemoveInventory(item);
+                                player.GetInventory().AddInventory(item);
+                                this.invert = false;
+                                if(deleteWhenEmpty == true)
+                                {
+                                    GameObject.Destroy(this.gameObject);
+                                }
+                            }
 
                     }
                         
